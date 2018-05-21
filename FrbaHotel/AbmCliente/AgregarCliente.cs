@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace FrbaHotel.AbmCliente
 {
-    public partial class Form1 : Form
+    public partial class AgregarCliente : Form
     {
-        public Form1()
+        public AgregarCliente()
         {
             InitializeComponent();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
