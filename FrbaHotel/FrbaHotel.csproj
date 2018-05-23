@@ -74,11 +74,41 @@
     <Compile Include="AbmCliente\ModificarCliente.Designer.cs">
       <DependentUpon>ModificarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmHabitacion\Form1.cs">
+    <Compile Include="AbmHabitacion\ABM_Habitacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmHabitacion\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AbmHabitacion\ABM_Habitacion.Designer.cs">
+      <DependentUpon>ABM_Habitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmHabitacion\AgregarHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmHabitacion\AgregarHabitacion.Designer.cs">
+      <DependentUpon>AgregarHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmHabitacion\EliminarHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmHabitacion\EliminarHabitacion.Designer.cs">
+      <DependentUpon>EliminarHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmHabitacion\ModificarHabitacionElegida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmHabitacion\ModificarHabitacionElegida.Designer.cs">
+      <DependentUpon>ModificarHabitacionElegida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmHabitacion\ModificarHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmHabitacion\ModificarHabitacion.Designer.cs">
+      <DependentUpon>ModificarHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmHotel\ABM_Hotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmHotel\ABM_Hotel.Designer.cs">
+      <DependentUpon>ABM_Hotel.cs</DependentUpon>
     </Compile>
     <Compile Include="AbmRegimen\Form1.cs">
       <SubType>Form</SubType>
@@ -155,6 +185,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AbmCliente\ModificarClienteElegido.resx">
       <DependentUpon>ModificarClienteElegido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmHabitacion\ABM_Habitacion.resx">
+      <DependentUpon>ABM_Habitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmHabitacion\AgregarHabitacion.resx">
+      <DependentUpon>AgregarHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmHabitacion\EliminarHabitacion.resx">
+      <DependentUpon>EliminarHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmHabitacion\ModificarHabitacion.resx">
+      <DependentUpon>ModificarHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmHabitacion\ModificarHabitacionElegida.resx">
+      <DependentUpon>ModificarHabitacionElegida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmHotel\ABM_Hotel.resx">
+      <DependentUpon>ABM_Hotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

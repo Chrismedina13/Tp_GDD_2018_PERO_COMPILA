@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FrbaHotel.AbmCliente
+namespace FrbaHotel.AbmHotel
 {
-    public partial class EliminarCliente : Form
+    public partial class ABM_Hotel : Form
     {
-        public EliminarCliente()
+        public ABM_Hotel()
         {
             InitializeComponent();
-        }
-
-        private void S_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
