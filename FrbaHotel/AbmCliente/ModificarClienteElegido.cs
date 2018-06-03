@@ -12,7 +12,7 @@ namespace FrbaHotel.AbmCliente
 {
     public partial class ModificarClienteElegido : Form
     {
-        public ModificarClienteElegido()
+        public ModificarClienteElegido(string nombre, string apellido, int nroIdentificacion,string email)
         {
             InitializeComponent();
         }

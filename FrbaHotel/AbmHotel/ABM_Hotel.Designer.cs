@@ -42,6 +42,7 @@
             this.Volver.TabIndex = 11;
             this.Volver.Text = "Volver";
             this.Volver.UseVisualStyleBackColor = true;
+            this.Volver.Click += new System.EventHandler(this.Volver_Click);
             // 
             // EliminarHotel
             // 
@@ -51,6 +52,7 @@
             this.EliminarHotel.TabIndex = 10;
             this.EliminarHotel.Text = "ELIMINAR HOTEL";
             this.EliminarHotel.UseVisualStyleBackColor = true;
+            this.EliminarHotel.Click += new System.EventHandler(this.EliminarHotel_Click);
             // 
             // ModificarHotel
             // 
@@ -60,6 +62,7 @@
             this.ModificarHotel.TabIndex = 9;
             this.ModificarHotel.Text = "MODIFICAR HOTEL";
             this.ModificarHotel.UseVisualStyleBackColor = true;
+            this.ModificarHotel.Click += new System.EventHandler(this.ModificarHotel_Click);
             // 
             // AgregarHotel
             // 
@@ -69,6 +72,7 @@
             this.AgregarHotel.TabIndex = 8;
             this.AgregarHotel.Text = "AGREGAR HOTEL";
             this.AgregarHotel.UseVisualStyleBackColor = true;
+            this.AgregarHotel.Click += new System.EventHandler(this.AgregarHotel_Click);
             // 
             // ABM_Hotel
             // 

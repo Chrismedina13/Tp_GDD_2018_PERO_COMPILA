@@ -42,6 +42,7 @@
             this.Volver.TabIndex = 7;
             this.Volver.Text = "Volver";
             this.Volver.UseVisualStyleBackColor = true;
+            this.Volver.Click += new System.EventHandler(this.Volver_Click);
             // 
             // EliminarHabitacion
             // 
@@ -51,6 +52,7 @@
             this.EliminarHabitacion.TabIndex = 6;
             this.EliminarHabitacion.Text = "ELIMINAR HABITACION";
             this.EliminarHabitacion.UseVisualStyleBackColor = true;
+            this.EliminarHabitacion.Click += new System.EventHandler(this.EliminarHabitacion_Click);
             // 
             // ModificarHabitacion
             // 
@@ -60,6 +62,7 @@
             this.ModificarHabitacion.TabIndex = 5;
             this.ModificarHabitacion.Text = "MODIFICAR HABITACION";
             this.ModificarHabitacion.UseVisualStyleBackColor = true;
+            this.ModificarHabitacion.Click += new System.EventHandler(this.ModificarHabitacion_Click);
             // 
             // AgregarHabitacion
             // 
@@ -69,6 +72,7 @@
             this.AgregarHabitacion.TabIndex = 4;
             this.AgregarHabitacion.Text = "AGREGAR HABITACION";
             this.AgregarHabitacion.UseVisualStyleBackColor = true;
+            this.AgregarHabitacion.Click += new System.EventHandler(this.AgregarHabitacion_Click);
             // 
             // ABM_Habitacion
             // 

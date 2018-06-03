@@ -16,5 +16,28 @@ namespace FrbaHotel.AbmHotel
         {
             InitializeComponent();
         }
+
+        private void AgregarHotel_Click(object sender, EventArgs e)
+        {
+            AgregarHotel formAgregarHotel = new AgregarHotel();
+            formAgregarHotel.Show();
+        }
+
+        private void ModificarHotel_Click(object sender, EventArgs e)
+        {
+            ModificarHotel formModificarHotel = new ModificarHotel();
+            formModificarHotel.Show();
+        }
+
+        private void EliminarHotel_Click(object sender, EventArgs e)
+        {
+            EliminarHotel formEliminarHotel = new EliminarHotel();
+            formEliminarHotel.Show();
+        }
+
+        private void Volver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
