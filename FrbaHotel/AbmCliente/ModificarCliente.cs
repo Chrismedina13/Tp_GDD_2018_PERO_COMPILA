@@ -15,7 +15,7 @@ namespace FrbaHotel.AbmCliente
         public ModificarCliente()
         {
             InitializeComponent();
-            Database.cargarGriddCliente(dataGridView1, "", "", "");
+            Database.cargarGriddClienteAModificar(dataGridView1, "", "", "");
             dataGridView1.SelectionChanged += new EventHandler(dataGridView1_SelectionChanged);
         }
 
@@ -98,27 +98,27 @@ namespace FrbaHotel.AbmCliente
 
           private void textNombre_KeyUp(object sender, KeyEventArgs e)
           {
-              Database.cargarGriddCliente(dataGridView1, textNombre.Text, textApellido.Text, textEmail.Text);
+              Database.cargarGriddClienteAModificar(dataGridView1, textNombre.Text, textApellido.Text, textEmail.Text);
           }
 
           private void textApellido_KeyUp(object sender, KeyEventArgs e)
           {
-              Database.cargarGriddCliente(dataGridView1, textNombre.Text, textApellido.Text, textEmail.Text);
+              Database.cargarGriddClienteAModificar(dataGridView1, textNombre.Text, textApellido.Text, textEmail.Text);
           }
 
           private void textNroIdentificacion_KeyUp(object sender, KeyEventArgs e)
           {
-              Database.cargarGriddCliente(dataGridView1, textNombre.Text, textApellido.Text, textEmail.Text);
+              Database.cargarGriddClienteAModificar(dataGridView1, textNombre.Text, textApellido.Text, textEmail.Text);
           }
 
           private void textTipoIdentificacion_KeyUp(object sender, KeyEventArgs e)
           {
-              Database.cargarGriddCliente(dataGridView1, textNombre.Text, textApellido.Text, textEmail.Text);
+              Database.cargarGriddClienteAModificar(dataGridView1, textNombre.Text, textApellido.Text, textEmail.Text);
           }
 
           private void textEmail_KeyUp(object sender, KeyEventArgs e)
           {
-              Database.cargarGriddCliente(dataGridView1, textNombre.Text, textApellido.Text, textEmail.Text);
+              Database.cargarGriddClienteAModificar(dataGridView1, textNombre.Text, textApellido.Text, textEmail.Text);
           }  
   
 
