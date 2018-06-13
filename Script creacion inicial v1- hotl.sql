@@ -963,7 +963,7 @@ insert into pero_compila.Funcionalidad (funcionalidad_descripcion) values
 
 go
 insert into [pero_compila].FuncionalidadXRol (funcionalidadXRol_rol, funcionalidadXRol_funcionalidad) values
-(1,1),(1,2),(2,3),(1,4),(1,5),(1,6),(2,7),(3,7),(2,8),(3,8),(2,9),(2,10).(2,11),(1,11);
+(1,1),(1,2),(2,3),(1,4),(1,5),(1,6),(2,7),(3,7),(2,8),(3,8),(2,9),(2,10),(2,11),(1,11);
 
 					/*Usuarios*/
 
