@@ -32,3 +32,4 @@ C:\Users\chris\Desktop\Tp_Hotel\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\Frb
 C:\Users\chris\Desktop\Tp_Hotel\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.csproj.GenerateResource.Cache
 C:\Users\chris\Desktop\Tp_Hotel\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\bin\Debug\FrbaHotel.exe
 C:\Users\chris\Desktop\Tp_Hotel\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\bin\Debug\FrbaHotel.pdb
+C:\Users\chris\Desktop\Tp_Hotel\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.Estadisticas.resources

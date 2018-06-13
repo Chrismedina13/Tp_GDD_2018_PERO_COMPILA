@@ -52,15 +52,6 @@ namespace FrbaHotel.AbmCliente
             String email = textEmail.Text;
             int identificacion = Convert.ToInt32(textNroIdentificacion.Text);
 
-
-            if (Database.existeClienteAModificar(nombre, apellido, identificacion,email))
-            {
-
-                MessageBox.Show("Cliente no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-
-            }
-
             if (textNombre.Text.Trim() == "" | textApellido.Text.Trim() == "" | textNroIdentificacion.Text.Trim() == "" | textEmail.Text.Trim() == "" )
             {
                 MessageBox.Show("Faltan completar campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

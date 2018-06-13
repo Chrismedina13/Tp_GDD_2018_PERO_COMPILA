@@ -44,6 +44,8 @@
             this.textNumeroDeHabitacion.Name = "textNumeroDeHabitacion";
             this.textNumeroDeHabitacion.Size = new System.Drawing.Size(100, 20);
             this.textNumeroDeHabitacion.TabIndex = 0;
+            this.textNumeroDeHabitacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNumeroHabitacion_KeyUp);
+
             // 
             // label1
             // 
@@ -60,6 +62,7 @@
             this.textPiso.Name = "textPiso";
             this.textPiso.Size = new System.Drawing.Size(100, 20);
             this.textPiso.TabIndex = 2;
+            this.textPiso.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textPiso_KeyUp);
             // 
             // label2
             // 
@@ -73,7 +76,7 @@
             // S
             // 
             this.S.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.S.Location = new System.Drawing.Point(3, 147);
+            this.S.Location = new System.Drawing.Point(-6, 147);
             this.S.Name = "S";
             this.S.Size = new System.Drawing.Size(308, 166);
             this.S.TabIndex = 25;
@@ -86,6 +89,7 @@
             this.btEliminar.TabIndex = 26;
             this.btEliminar.Text = "ELIMINAR";
             this.btEliminar.UseVisualStyleBackColor = true;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
             // btCancelar
             // 
@@ -95,6 +99,7 @@
             this.btCancelar.TabIndex = 28;
             this.btCancelar.Text = "CANCELAR";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // EliminarHabitacion
             // 
