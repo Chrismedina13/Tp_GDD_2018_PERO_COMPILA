@@ -35,7 +35,7 @@
             this.textApellido = new System.Windows.Forms.TextBox();
             this.btEliminar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.S = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEliminarC = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.textTipoIdentificacion = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.S)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEliminarC)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,6 +79,7 @@
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(164, 20);
             this.textNombre.TabIndex = 19;
+            this.textNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNombre_KeyUp);
             // 
             // textApellido
             // 
@@ -86,6 +87,7 @@
             this.textApellido.Name = "textApellido";
             this.textApellido.Size = new System.Drawing.Size(164, 20);
             this.textApellido.TabIndex = 20;
+            this.textApellido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textApellido_KeyUp);
             // 
             // btEliminar
             // 
@@ -95,6 +97,7 @@
             this.btEliminar.TabIndex = 22;
             this.btEliminar.Text = "ELIMINAR";
             this.btEliminar.UseVisualStyleBackColor = true;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
             // btCancelar
             // 
@@ -104,15 +107,16 @@
             this.btCancelar.TabIndex = 23;
             this.btCancelar.Text = "CANCELAR";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // S
+            // dataGridViewEliminarC
             // 
-            this.S.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.S.Location = new System.Drawing.Point(32, 216);
-            this.S.Name = "S";
-            this.S.Size = new System.Drawing.Size(449, 166);
-            this.S.TabIndex = 24;
-            this.S.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.S_CellContentClick);
+            this.dataGridViewEliminarC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEliminarC.Location = new System.Drawing.Point(32, 216);
+            this.dataGridViewEliminarC.Name = "dataGridViewEliminarC";
+            this.dataGridViewEliminarC.Size = new System.Drawing.Size(449, 166);
+            this.dataGridViewEliminarC.TabIndex = 24;
+            this.dataGridViewEliminarC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.S_CellContentClick);
             // 
             // label11
             // 
@@ -129,6 +133,7 @@
             this.textTipoIdentificacion.Name = "textTipoIdentificacion";
             this.textTipoIdentificacion.Size = new System.Drawing.Size(37, 20);
             this.textTipoIdentificacion.TabIndex = 37;
+            this.textTipoIdentificacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textTipoIdentificacion_KeyUp);
             // 
             // label6
             // 
@@ -145,6 +150,7 @@
             this.textNroIdentificacion.Name = "textNroIdentificacion";
             this.textNroIdentificacion.Size = new System.Drawing.Size(160, 20);
             this.textNroIdentificacion.TabIndex = 34;
+            this.textNroIdentificacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNroIdentificacion_KeyUp);
             // 
             // label4
             // 
@@ -161,6 +167,7 @@
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(164, 20);
             this.textEmail.TabIndex = 39;
+            this.textEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEmail_KeyUp);
             // 
             // label5
             // 
@@ -183,7 +190,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textNroIdentificacion);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.S);
+            this.Controls.Add(this.dataGridViewEliminarC);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.textApellido);
@@ -193,7 +200,7 @@
             this.Controls.Add(this.label1);
             this.Name = "EliminarCliente";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.S)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEliminarC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,7 +215,7 @@
         private System.Windows.Forms.TextBox textApellido;
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.DataGridView S;
+        private System.Windows.Forms.DataGridView dataGridViewEliminarC;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textTipoIdentificacion;
         private System.Windows.Forms.Label label6;

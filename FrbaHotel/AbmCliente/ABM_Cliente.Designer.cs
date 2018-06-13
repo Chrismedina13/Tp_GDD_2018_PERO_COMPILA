@@ -42,6 +42,7 @@
             this.AgregarCliente.TabIndex = 0;
             this.AgregarCliente.Text = "AGREGAR CLIENTE";
             this.AgregarCliente.UseVisualStyleBackColor = true;
+            this.AgregarCliente.Click += new System.EventHandler(this.AgregarCliente_Click);
             // 
             // ModificarCliente
             // 
@@ -61,6 +62,7 @@
             this.EliminarCliente.TabIndex = 2;
             this.EliminarCliente.Text = "ELIMINAR CLIENTE";
             this.EliminarCliente.UseVisualStyleBackColor = true;
+            this.EliminarCliente.Click += new System.EventHandler(this.EliminarCliente_Click);
             // 
             // Volver
             // 
@@ -70,6 +72,7 @@
             this.Volver.TabIndex = 3;
             this.Volver.Text = "Volver";
             this.Volver.UseVisualStyleBackColor = true;
+            this.Volver.Click += new System.EventHandler(this.Volver_Click);
             // 
             // ABM_Cliente
             // 
@@ -82,6 +85,7 @@
             this.Controls.Add(this.AgregarCliente);
             this.Name = "ABM_Cliente";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.ABM_Cliente_Load);
             this.ResumeLayout(false);
 
         }

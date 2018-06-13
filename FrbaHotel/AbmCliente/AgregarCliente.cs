@@ -17,24 +17,75 @@ namespace FrbaHotel.AbmCliente
             InitializeComponent();
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
 
+
+        private void limpiarCuadrosDeTexto()
+        {
+            textNombre.Text = "";
+            textApellido.Text = "";
+            textMail.Text = "";
+            textTelefono.Text = "";
+            textNacionalidad.Text = "";
+            dateTimePickerFechaNac.Text = "";
+            textTipoIdentificacion.Text = "";
+            textNroIdentificacion.Text = "";
+            textCalle.Text = "";
+            textCalleNro.Text = "";
+            textPiso.Text = "";
+            textDto.Text = "";
+            textLocalidad.Text = "";
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void btVolver_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void label11_Click(object sender, EventArgs e)
+        private void btAceptar_Click(object sender, EventArgs e)
         {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textNroIdentificacion.Text, @"^\d+$"))
+            {
+                MessageBox.Show("Sólo se permiten numeros en el Nro de Identificacion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (Database.ExisteMail(textMail.Text))
+            {
 
+                MessageBox.Show("Duplicacion de mails", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textTelefono.Text, @"^\d+$"))
+            {
+                MessageBox.Show("Sólo se permiten numeros en el Teléfono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (textCalleNro.Text.Trim() == "" |textTipoIdentificacion.Text.Trim() == "" |textNroIdentificacion.Text.Trim() == "" |textCalle.Text.Trim() == "" |textNombre.Text.Trim() == "" | textApellido.Text.Trim() == "" | textMail.Text.Trim() == "" | textTelefono.Text.Trim() == "" | textNacionalidad.Text.Trim() == "" | dateTimePickerFechaNac.Text.Trim() == "")
+            {
+                MessageBox.Show("Faltan completar campos obligatorios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                String nombre = textNombre.Text;
+                String apellido = textApellido.Text;
+                String mail = textMail.Text;
+                String telefono = textTelefono.Text;
+                String nacionalidad = textNacionalidad.Text;
+                String fechanacimiento = dateTimePickerFechaNac.Text;
+                String TipoDeIdentificacion = textTipoIdentificacion.Text;
+                int numeroIden = Convert.ToInt32(textNroIdentificacion.Text);
+                String calle = textCalle.Text;
+                String calleNro = textCalleNro.Text;
+                int piso =  Convert.ToInt32(textPiso.Text);
+                String dto = textDto.Text;
+                String localidad = textLocalidad.Text;
+                DateTime fecha = Convert.ToDateTime(fechanacimiento);
+                Database.AddCliente(nombre,apellido,mail,telefono,nacionalidad,fecha,TipoDeIdentificacion,numeroIden,calle,calleNro,piso,dto,localidad);
+                this.limpiarCuadrosDeTexto();
+            }
         }
 
-        private void AgregarCliente_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

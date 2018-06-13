@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btCancelar = new System.Windows.Forms.Button();
-            this.btEliminar = new System.Windows.Forms.Button();
+            this.btModificar = new System.Windows.Forms.Button();
             this.S = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.textPiso = new System.Windows.Forms.TextBox();
@@ -46,15 +46,17 @@
             this.btCancelar.TabIndex = 35;
             this.btCancelar.Text = "CANCELAR";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
-            // btEliminar
+            // btModificar
             // 
-            this.btEliminar.Location = new System.Drawing.Point(53, 103);
-            this.btEliminar.Name = "btEliminar";
-            this.btEliminar.Size = new System.Drawing.Size(81, 32);
-            this.btEliminar.TabIndex = 34;
-            this.btEliminar.Text = "MODIFICAR";
-            this.btEliminar.UseVisualStyleBackColor = true;
+            this.btModificar.Location = new System.Drawing.Point(53, 103);
+            this.btModificar.Name = "btModificar";
+            this.btModificar.Size = new System.Drawing.Size(81, 32);
+            this.btModificar.TabIndex = 34;
+            this.btModificar.Text = "MODIFICAR";
+            this.btModificar.UseVisualStyleBackColor = true;
+            this.btModificar.Click += new System.EventHandler(this.btModificar_Click);
             // 
             // S
             // 
@@ -79,6 +81,7 @@
             this.textPiso.Name = "textPiso";
             this.textPiso.Size = new System.Drawing.Size(100, 20);
             this.textPiso.TabIndex = 31;
+            this.textPiso.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textPiso_KeyUp);
             // 
             // label1
             // 
@@ -95,6 +98,7 @@
             this.textNumeroDeHabitacion.Name = "textNumeroDeHabitacion";
             this.textNumeroDeHabitacion.Size = new System.Drawing.Size(100, 20);
             this.textNumeroDeHabitacion.TabIndex = 29;
+            this.textNumeroDeHabitacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNumeroHabitacion_KeyUp);
             // 
             // ModificarHabitacion
             // 
@@ -102,7 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 345);
             this.Controls.Add(this.btCancelar);
-            this.Controls.Add(this.btEliminar);
+            this.Controls.Add(this.btModificar);
             this.Controls.Add(this.S);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textPiso);
@@ -119,7 +123,7 @@
         #endregion
 
         private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.Button btEliminar;
+        private System.Windows.Forms.Button btModificar;
         private System.Windows.Forms.DataGridView S;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textPiso;

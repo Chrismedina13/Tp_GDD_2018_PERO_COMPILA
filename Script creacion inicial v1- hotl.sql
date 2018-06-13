@@ -238,6 +238,7 @@ habitacion_descripcion nvarchar(255),
 habitacion_ubicacion nvarchar(50),
 habitacion_codigo numeric(18,0),
 habitacion_estado bit default 1,
+habitacion_tipo numeric(18,0),
 PRIMARY KEY (habitacion_numero,habitacion_piso,habitacion_descripcion,habitacion_ubicacion)
 )
 
@@ -959,7 +960,7 @@ insert into pero_compila.Funcionalidad (funcionalidad_descripcion) values
 ('Registrar Consumible'),
 ('Listado estadistico');
 					/*RolXFuncionalidad*/
-					/RolXFuncionalidad/
+					/*RolXFuncionalidad*/
 
 go
 insert into [pero_compila].FuncionalidadXRol (funcionalidadXRol_rol, funcionalidadXRol_funcionalidad) values

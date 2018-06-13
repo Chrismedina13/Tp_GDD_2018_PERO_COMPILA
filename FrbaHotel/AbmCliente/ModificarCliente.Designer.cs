@@ -63,6 +63,7 @@
             this.btCancelar.TabIndex = 28;
             this.btCancelar.Text = "CANCELAR";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btModificar
             // 
@@ -72,6 +73,7 @@
             this.btModificar.TabIndex = 29;
             this.btModificar.Text = "MODIFICAR";
             this.btModificar.UseVisualStyleBackColor = true;
+            this.btModificar.Click += new System.EventHandler(this.btModificar_Click);
             // 
             // dataGridView1
             // 
@@ -96,6 +98,8 @@
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(164, 20);
             this.textEmail.TabIndex = 50;
+            this.textEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEmail_KeyUp);
+
             // 
             // label11
             // 
@@ -112,6 +116,8 @@
             this.textTipoIdentificacion.Name = "textTipoIdentificacion";
             this.textTipoIdentificacion.Size = new System.Drawing.Size(37, 20);
             this.textTipoIdentificacion.TabIndex = 48;
+            this.textTipoIdentificacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textTipoIdentificacion_KeyUp);
+
             // 
             // label1
             // 
@@ -128,6 +134,8 @@
             this.textNroIdentificacion.Name = "textNroIdentificacion";
             this.textNroIdentificacion.Size = new System.Drawing.Size(160, 20);
             this.textNroIdentificacion.TabIndex = 46;
+            this.textNroIdentificacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNroIdentificacion_KeyUp);
+
             // 
             // label4
             // 
@@ -144,6 +152,7 @@
             this.textApellido.Name = "textApellido";
             this.textApellido.Size = new System.Drawing.Size(164, 20);
             this.textApellido.TabIndex = 44;
+            this.textApellido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textApellido_KeyUp);
             // 
             // textNombre
             // 
@@ -151,6 +160,7 @@
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(164, 20);
             this.textNombre.TabIndex = 43;
+            this.textNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNombre_KeyUp);
             // 
             // label3
             // 

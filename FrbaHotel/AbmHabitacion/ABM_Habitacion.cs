@@ -16,5 +16,28 @@ namespace FrbaHotel.AbmHabitacion
         {
             InitializeComponent();
         }
+
+        private void AgregarHabitacion_Click(object sender, EventArgs e)
+        {
+            AgregarHabitacion formAgregarHabitacion = new AgregarHabitacion();
+            formAgregarHabitacion.Show();
+        }
+
+        private void ModificarHabitacion_Click(object sender, EventArgs e)
+        {
+            ModificarHabitacion formMOdificarHabitacion = new ModificarHabitacion();
+            formMOdificarHabitacion.Show();
+        }
+
+        private void EliminarHabitacion_Click(object sender, EventArgs e)
+        {
+            EliminarHabitacion formEliminarHabitacion = new EliminarHabitacion();
+            formEliminarHabitacion.Show();
+        }
+
+        private void Volver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

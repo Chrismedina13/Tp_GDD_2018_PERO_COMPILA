@@ -38,6 +38,8 @@
             this.textDescripcion = new System.Windows.Forms.TextBox();
             this.btVolver = new System.Windows.Forms.Button();
             this.btAceptar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textHabilitado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label3
@@ -106,27 +108,47 @@
             // 
             // btVolver
             // 
-            this.btVolver.Location = new System.Drawing.Point(220, 279);
+            this.btVolver.Location = new System.Drawing.Point(220, 291);
             this.btVolver.Name = "btVolver";
             this.btVolver.Size = new System.Drawing.Size(75, 23);
             this.btVolver.TabIndex = 24;
             this.btVolver.Text = "VOLVER";
             this.btVolver.UseVisualStyleBackColor = true;
+            this.btVolver.Click += new System.EventHandler(this.btVolver_Click);
             // 
             // btAceptar
             // 
-            this.btAceptar.Location = new System.Drawing.Point(31, 279);
+            this.btAceptar.Location = new System.Drawing.Point(31, 291);
             this.btAceptar.Name = "btAceptar";
             this.btAceptar.Size = new System.Drawing.Size(75, 23);
             this.btAceptar.TabIndex = 23;
             this.btAceptar.Text = "ACEPTAR";
             this.btAceptar.UseVisualStyleBackColor = true;
+            this.btAceptar.Click += new System.EventHandler(this.btAceptar_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(167, 256);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Habilitado";
+            // 
+            // textHabilitado
+            // 
+            this.textHabilitado.Location = new System.Drawing.Point(256, 253);
+            this.textHabilitado.Name = "textHabilitado";
+            this.textHabilitado.Size = new System.Drawing.Size(39, 20);
+            this.textHabilitado.TabIndex = 25;
             // 
             // ModificarHabitacionElegida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 326);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textHabilitado);
             this.Controls.Add(this.btVolver);
             this.Controls.Add(this.btAceptar);
             this.Controls.Add(this.label5);
@@ -156,5 +178,7 @@
         private System.Windows.Forms.TextBox textDescripcion;
         private System.Windows.Forms.Button btVolver;
         private System.Windows.Forms.Button btAceptar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textHabilitado;
     }
 }

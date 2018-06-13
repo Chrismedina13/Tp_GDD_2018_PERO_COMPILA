@@ -99,6 +99,12 @@
             // cbTipoHabitacion
             // 
             this.cbTipoHabitacion.FormattingEnabled = true;
+            this.cbTipoHabitacion.Items.AddRange(new object[] {
+            "Simple\t",
+            "Doble ",
+            "Doble Twin ",
+            "Triple ",
+            "Cuadruple "});
             this.cbTipoHabitacion.Location = new System.Drawing.Point(131, 212);
             this.cbTipoHabitacion.Name = "cbTipoHabitacion";
             this.cbTipoHabitacion.Size = new System.Drawing.Size(162, 21);
@@ -138,6 +144,7 @@
             this.btVolver.TabIndex = 22;
             this.btVolver.Text = "VOLVER";
             this.btVolver.UseVisualStyleBackColor = true;
+            this.btVolver.Click += new System.EventHandler(this.btVolver_Click);
             // 
             // btAceptar
             // 
@@ -147,6 +154,7 @@
             this.btAceptar.TabIndex = 21;
             this.btAceptar.Text = "ACEPTAR";
             this.btAceptar.UseVisualStyleBackColor = true;
+            this.btAceptar.Click += new System.EventHandler(this.btAceptar_Click);
             // 
             // label9
             // 
