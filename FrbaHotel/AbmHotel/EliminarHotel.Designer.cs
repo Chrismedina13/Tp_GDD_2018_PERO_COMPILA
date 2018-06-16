@@ -44,6 +44,12 @@
             this.dataGridViewEliminarHotel = new System.Windows.Forms.DataGridView();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btEliminar = new System.Windows.Forms.Button();
+            this.dateTimePickerFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.textDescripcionCierre = new System.Windows.Forms.TextBox();
+            this.fech = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEliminarHotel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,11 +76,12 @@
             this.texPais.Name = "texPais";
             this.texPais.Size = new System.Drawing.Size(143, 20);
             this.texPais.TabIndex = 61;
+            this.texPais.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textPais_KeyUp);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 128);
+            this.label11.Location = new System.Drawing.Point(21, 132);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 60;
@@ -95,11 +102,12 @@
             this.textCiudad.Name = "textCiudad";
             this.textCiudad.Size = new System.Drawing.Size(143, 20);
             this.textCiudad.TabIndex = 58;
+            this.textCiudad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textCiudad_KeyUp);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 102);
+            this.label7.Location = new System.Drawing.Point(21, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 57;
@@ -120,11 +128,12 @@
             this.textCantidadEstrellas.Name = "textCantidadEstrellas";
             this.textCantidadEstrellas.Size = new System.Drawing.Size(143, 20);
             this.textCantidadEstrellas.TabIndex = 55;
+            this.textCantidadEstrellas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textCantEstrellas_KeyUp);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 76);
+            this.label3.Location = new System.Drawing.Point(22, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 54;
@@ -145,11 +154,12 @@
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(143, 20);
             this.textNombre.TabIndex = 64;
+            this.textNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNombre_KeyUp);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 50);
+            this.label1.Location = new System.Drawing.Point(22, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 63;
@@ -158,9 +168,9 @@
             // dataGridViewEliminarHotel
             // 
             this.dataGridViewEliminarHotel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEliminarHotel.Location = new System.Drawing.Point(25, 178);
+            this.dataGridViewEliminarHotel.Location = new System.Drawing.Point(25, 248);
             this.dataGridViewEliminarHotel.Name = "dataGridViewEliminarHotel";
-            this.dataGridViewEliminarHotel.Size = new System.Drawing.Size(420, 150);
+            this.dataGridViewEliminarHotel.Size = new System.Drawing.Size(420, 129);
             this.dataGridViewEliminarHotel.TabIndex = 66;
             // 
             // btCancelar
@@ -171,6 +181,7 @@
             this.btCancelar.TabIndex = 68;
             this.btCancelar.Text = "CANCELAR";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btEliminar
             // 
@@ -180,12 +191,67 @@
             this.btEliminar.TabIndex = 67;
             this.btEliminar.Text = "ELIMINAR";
             this.btEliminar.UseVisualStyleBackColor = true;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
+            // 
+            // dateTimePickerFechaInicio
+            // 
+            this.dateTimePickerFechaInicio.Location = new System.Drawing.Point(127, 151);
+            this.dateTimePickerFechaInicio.Name = "dateTimePickerFechaInicio";
+            this.dateTimePickerFechaInicio.Size = new System.Drawing.Size(196, 20);
+            this.dateTimePickerFechaInicio.TabIndex = 69;
+            // 
+            // dateTimePickerFechaFin
+            // 
+            this.dateTimePickerFechaFin.Location = new System.Drawing.Point(127, 177);
+            this.dateTimePickerFechaFin.Name = "dateTimePickerFechaFin";
+            this.dateTimePickerFechaFin.Size = new System.Drawing.Size(196, 20);
+            this.dateTimePickerFechaFin.TabIndex = 70;
+            // 
+            // textDescripcionCierre
+            // 
+            this.textDescripcionCierre.Location = new System.Drawing.Point(127, 203);
+            this.textDescripcionCierre.Name = "textDescripcionCierre";
+            this.textDescripcionCierre.Size = new System.Drawing.Size(143, 20);
+            this.textDescripcionCierre.TabIndex = 71;
+            // 
+            // fech
+            // 
+            this.fech.AutoSize = true;
+            this.fech.Location = new System.Drawing.Point(21, 158);
+            this.fech.Name = "fech";
+            this.fech.Size = new System.Drawing.Size(101, 13);
+            this.fech.TabIndex = 72;
+            this.fech.Text = "Fecha Inicion Cierre";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 184);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 73;
+            this.label4.Text = "Fecha Fin Cierre:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 210);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 13);
+            this.label5.TabIndex = 74;
+            this.label5.Text = "Descripcion Cierre:";
             // 
             // EliminarHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 352);
+            this.ClientSize = new System.Drawing.Size(470, 406);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.fech);
+            this.Controls.Add(this.textDescripcionCierre);
+            this.Controls.Add(this.dateTimePickerFechaFin);
+            this.Controls.Add(this.dateTimePickerFechaInicio);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btEliminar);
             this.Controls.Add(this.dataGridViewEliminarHotel);
@@ -229,5 +295,11 @@
         private System.Windows.Forms.DataGridView dataGridViewEliminarHotel;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btEliminar;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFechaInicio;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFechaFin;
+        private System.Windows.Forms.TextBox textDescripcionCierre;
+        private System.Windows.Forms.Label fech;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
