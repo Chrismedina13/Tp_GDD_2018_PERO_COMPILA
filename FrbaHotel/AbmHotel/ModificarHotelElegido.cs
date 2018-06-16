@@ -12,7 +12,7 @@ namespace FrbaHotel.AbmHotel
 {
     public partial class ModificarHotelElegido : Form
     {
-        public ModificarHotelElegido()
+        public ModificarHotelElegido(String nombreViejo,int cantidadEstrellasViejo, String Pais, String Ciudad)
         {
             InitializeComponent();
         }

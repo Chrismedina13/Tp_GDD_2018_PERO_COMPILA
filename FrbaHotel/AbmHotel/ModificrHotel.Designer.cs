@@ -55,6 +55,7 @@
             this.btCancelar.TabIndex = 84;
             this.btCancelar.Text = "CANCELAR";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // btModificar
             // 
@@ -64,6 +65,7 @@
             this.btModificar.TabIndex = 83;
             this.btModificar.Text = "MODIFICAR";
             this.btModificar.UseVisualStyleBackColor = true;
+            this.btModificar.Click += new System.EventHandler(this.btModificar_Click);
             // 
             // dataGridViewModificarHotel
             // 
@@ -88,6 +90,8 @@
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(143, 20);
             this.textNombre.TabIndex = 80;
+            this.textNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNombre_KeyUp);
+
             // 
             // label1
             // 
@@ -113,6 +117,8 @@
             this.texPais.Name = "texPais";
             this.texPais.Size = new System.Drawing.Size(143, 20);
             this.texPais.TabIndex = 77;
+            this.texPais.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textPais_KeyUp);
+
             // 
             // label11
             // 
@@ -138,6 +144,8 @@
             this.textCiudad.Name = "textCiudad";
             this.textCiudad.Size = new System.Drawing.Size(143, 20);
             this.textCiudad.TabIndex = 74;
+            this.textCiudad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textCiudad_KeyUp);
+
             // 
             // label7
             // 
@@ -163,6 +171,7 @@
             this.textCantidadEstrellas.Name = "textCantidadEstrellas";
             this.textCantidadEstrellas.Size = new System.Drawing.Size(143, 20);
             this.textCantidadEstrellas.TabIndex = 71;
+            this.textCantidadEstrellas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textCantEstrellas_KeyUp);
             // 
             // label3
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textCantidadEstrellas = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textCiudad = new System.Windows.Forms.TextBox();
@@ -52,17 +52,22 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lbRegimen = new System.Windows.Forms.ListBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateFechaCreacion = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.btVolver = new System.Windows.Forms.Button();
             this.btAceptar = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textNroCalle = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.gD1C2018DataSet = new FrbaHotel.GD1C2018DataSet();
+            this.gD1C2018DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxEstrellas = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gD1C2018DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gD1C2018DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label16
@@ -176,13 +181,6 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "*";
             // 
-            // textCantidadEstrellas
-            // 
-            this.textCantidadEstrellas.Location = new System.Drawing.Point(130, 114);
-            this.textCantidadEstrellas.Name = "textCantidadEstrellas";
-            this.textCantidadEstrellas.Size = new System.Drawing.Size(143, 20);
-            this.textCantidadEstrellas.TabIndex = 42;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -267,16 +265,17 @@
             this.lbRegimen.FormattingEnabled = true;
             this.lbRegimen.Location = new System.Drawing.Point(129, 192);
             this.lbRegimen.Name = "lbRegimen";
+            this.lbRegimen.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lbRegimen.Size = new System.Drawing.Size(143, 43);
             this.lbRegimen.TabIndex = 53;
             this.lbRegimen.SelectedIndexChanged += new System.EventHandler(this.lbRegimen_SelectedIndexChanged);
             // 
-            // dateTimePicker1
+            // dateFechaCreacion
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(129, 241);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(144, 20);
-            this.dateTimePicker1.TabIndex = 54;
+            this.dateFechaCreacion.Location = new System.Drawing.Point(129, 241);
+            this.dateFechaCreacion.Name = "dateFechaCreacion";
+            this.dateFechaCreacion.Size = new System.Drawing.Size(144, 20);
+            this.dateFechaCreacion.TabIndex = 54;
             // 
             // label17
             // 
@@ -304,6 +303,7 @@
             this.btVolver.TabIndex = 57;
             this.btVolver.Text = "VOLVER";
             this.btVolver.UseVisualStyleBackColor = true;
+            this.btVolver.Click += new System.EventHandler(this.btVolver_Click);
             // 
             // btAceptar
             // 
@@ -313,6 +313,7 @@
             this.btAceptar.TabIndex = 56;
             this.btAceptar.Text = "ACEPTAR";
             this.btAceptar.UseVisualStyleBackColor = true;
+            this.btAceptar.Click += new System.EventHandler(this.btAceptar_Click);
             // 
             // label19
             // 
@@ -332,17 +333,17 @@
             this.label20.TabIndex = 60;
             this.label20.Text = "Nro:";
             // 
-            // textBox1
+            // textNroCalle
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(51, 20);
-            this.textBox1.TabIndex = 61;
+            this.textNroCalle.Location = new System.Drawing.Point(117, 59);
+            this.textNroCalle.Name = "textNroCalle";
+            this.textNroCalle.Size = new System.Drawing.Size(51, 20);
+            this.textNroCalle.TabIndex = 61;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textNroCalle);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.textDireccion);
@@ -363,18 +364,43 @@
             this.label21.TabIndex = 62;
             this.label21.Text = "*";
             // 
+            // gD1C2018DataSet
+            // 
+            this.gD1C2018DataSet.DataSetName = "GD1C2018DataSet";
+            this.gD1C2018DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gD1C2018DataSetBindingSource
+            // 
+            this.gD1C2018DataSetBindingSource.DataSource = this.gD1C2018DataSet;
+            this.gD1C2018DataSetBindingSource.Position = 0;
+            // 
+            // comboBoxEstrellas
+            // 
+            this.comboBoxEstrellas.FormattingEnabled = true;
+            this.comboBoxEstrellas.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBoxEstrellas.Location = new System.Drawing.Point(206, 114);
+            this.comboBoxEstrellas.Name = "comboBoxEstrellas";
+            this.comboBoxEstrellas.Size = new System.Drawing.Size(65, 21);
+            this.comboBoxEstrellas.TabIndex = 63;
+            // 
             // AgregarHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 449);
+            this.Controls.Add(this.comboBoxEstrellas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.btVolver);
             this.Controls.Add(this.btAceptar);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateFechaCreacion);
             this.Controls.Add(this.lbRegimen);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label15);
@@ -385,7 +411,6 @@
             this.Controls.Add(this.textCiudad);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textCantidadEstrellas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label13);
@@ -401,6 +426,8 @@
             this.Load += new System.EventHandler(this.AgregarHotel_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gD1C2018DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gD1C2018DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,7 +448,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textCantidadEstrellas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textCiudad;
@@ -432,15 +458,18 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ListBox lbRegimen;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateFechaCreacion;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btVolver;
         private System.Windows.Forms.Button btAceptar;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textNroCalle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label21;
+        private GD1C2018DataSet gD1C2018DataSet;
+        private System.Windows.Forms.BindingSource gD1C2018DataSetBindingSource;
+        private System.Windows.Forms.ComboBox comboBoxEstrellas;
     }
 }
