@@ -140,31 +140,77 @@
     <Compile Include="AbmRegimen\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbmRol\Form1.cs">
+    <Compile Include="AbmRol\ABM_Rol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbmRol\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AbmRol\ABM_Rol.Designer.cs">
+      <DependentUpon>ABM_Rol.cs</DependentUpon>
     </Compile>
-    <Compile Include="BDComun.cs" />
+    <Compile Include="AbmRol\Alta_Rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\Alta_Rol.Designer.cs">
+      <DependentUpon>Alta_Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\Alta_Rol_Funcionalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\Alta_Rol_Funcionalidad.Designer.cs">
+      <DependentUpon>Alta_Rol_Funcionalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\RolDal.cs" />
+    <Compile Include="AbmRol\Rol.cs" />
+    <Compile Include="AbmRol\modificar_rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\modificar_rol.Designer.cs">
+      <DependentUpon>modificar_rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmRol\Funcionalidad.cs" />
+    <Compile Include="AbmRol\eliminar_rol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmRol\eliminar_rol.Designer.cs">
+      <DependentUpon>eliminar_rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmUsuario\Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AbmUsuario\Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AbmUsuario\UsuarioDAL.cs" />
+    <Compile Include="AbmUsuario\Usuario.cs" />
     <Compile Include="CancelarReserva\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CancelarReserva\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="BDComun1.cs" />
+    <Compile Include="VentanaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="VentanaPrincipal.Designer.cs">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estadisticas.cs">
+    <Compile Include="VentanaPorHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estadisticas.Designer.cs">
-      <DependentUpon>Estadisticas.cs</DependentUpon>
+    <Compile Include="VentanaPorHotel.Designer.cs">
+      <DependentUpon>VentanaPorHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPorRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaPorRol.Designer.cs">
+      <DependentUpon>VentanaPorRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login1.Designer.cs">
+      <DependentUpon>Login1.cs</DependentUpon>
     </Compile>
     <Compile Include="GD1C2018DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -177,10 +223,10 @@
     <Compile Include="GenerarModificacionReserva\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\Form1.cs">
+    <Compile Include="ListadoEstadistico\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\Form1.Designer.cs">
+    <Compile Include="ListadoEstadistico\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -197,7 +243,6 @@
     <Compile Include="RegistrarEstadia\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Trimestre.cs" />
     <EmbeddedResource Include="AbmCliente\ABM_Cliente.resx">
       <DependentUpon>ABM_Cliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,8 +288,26 @@
     <EmbeddedResource Include="AbmHotel\ModificrHotel.resx">
       <DependentUpon>ModificrHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estadisticas.resx">
-      <DependentUpon>Estadisticas.cs</DependentUpon>
+    <EmbeddedResource Include="AbmRol\ABM_Rol.resx">
+      <DependentUpon>ABM_Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\Alta_Rol.resx">
+      <DependentUpon>Alta_Rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\Alta_Rol_Funcionalidad.resx">
+      <DependentUpon>Alta_Rol_Funcionalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\eliminar_rol.resx">
+      <DependentUpon>eliminar_rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmRol\modificar_rol.resx">
+      <DependentUpon>modificar_rol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AbmUsuario\Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login1.resx">
+      <DependentUpon>Login1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -255,6 +318,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VentanaPorHotel.resx">
+      <DependentUpon>VentanaPorHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaPorRol.resx">
+      <DependentUpon>VentanaPorRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaPrincipal.resx">
+      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="GD1C2018DataSet.xsc">
       <DependentUpon>GD1C2018DataSet.xsd</DependentUpon>
     </None>
@@ -279,9 +351,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ListadoEstadistico\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
