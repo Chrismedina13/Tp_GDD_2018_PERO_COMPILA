@@ -8,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrbaHotel.Support;
+
 
 namespace FrbaHotel
 {
     public partial class VentanaPorRol : Form
     {
+        private String userId;
+
         public VentanaPorRol()
         {
             InitializeComponent();
@@ -31,7 +35,7 @@ namespace FrbaHotel
         {
             //Vaciar comboBox
             comboBox1.DataSource = null;
-            Rol rol = new Rol();
+            FrbaHotel.AbmRol.Rol rol = new FrbaHotel.AbmRol.Rol();
             //Indicar qué propiedad se verá en la lista
             this.comboBox1.DisplayMember = "RolesPorUsuario";
             //Indicar qué valor tendrá cada ítem
@@ -41,30 +45,63 @@ namespace FrbaHotel
 
 
         }
-        private void VentanaPorRol_Load(object sender, EventArgs e)
-        {
-            //CargarComboRol();
-            //button1.Hide();
-            //comboBox1.Hide();
-        }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
 
-            VentanaPorHotel vhot = new VentanaPorHotel(nombreUser, this.comboBox1.Text.ToString());
-           vhot.ShowDialog();
-            this.Hide();
+          VentanaPorHotel vhot = new VentanaPorHotel(nombreUser, this.comboBox1.Text.ToString());
+         vhot.ShowDialog();
+         this.Hide();
 
+         // List<FrbaHotel.Support.Rol> roles = Database.getUserRoles(userId);
+        
+         /* foreach (FrbaHotel.Support.Rol rol in roles)
+          {
+              if (rol.estaHabilitado)
+              {
+                  VentanaPrincipal form1 = new VentanaPrincipal(rol, userId);
+                  this.Close();
+                  form1.Show();
+
+              }
+
+             // CargarComboRol();
+              button1.Hide();
+              comboBox1.Hide();
+          }
+          * */
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
-          // Login log = new Login();
-          //log.Show();
+           this.Close();
+           Login1 log = new Login1();
+          log.Show();
         }
+        
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VentanaPorRol_Load(object sender, EventArgs e)
         {
 
         }

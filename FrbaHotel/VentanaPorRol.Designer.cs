@@ -43,6 +43,7 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "Salir del sistema";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
@@ -71,6 +72,7 @@
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Seleccione el Rol";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // VentanaPorRol
             // 
@@ -83,6 +85,7 @@
             this.Controls.Add(this.label1);
             this.Name = "VentanaPorRol";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.VentanaPorRol_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
 ﻿using FrbaHotel.AbmRol;
+using FrbaHotel.Login;
 using FrbaHotel.AbmHotel;
 using FrbaHotel.AbmUsuario;
 using System;
@@ -13,11 +14,16 @@ using System.Windows.Forms;
 
 namespace FrbaHotel.AbmUsuario
 {
+    
     public partial class Registro : Form
     {
-        public Registro()
+        private Seleccion_de_ABMs seleccion_de_ABMs;
+
+        public Registro(Seleccion_de_ABMs seleccion_de_ABMs)
         {
+
             InitializeComponent();
+            this.seleccion_de_ABMs = seleccion_de_ABMs;
         }
 
         private void label3_Click(object sender, EventArgs e)

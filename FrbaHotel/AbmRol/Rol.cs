@@ -19,11 +19,13 @@ namespace FrbaHotel.AbmRol
         {
 
         }
+
         public Rol(int id, string nombre)
         {
             this.Id = id;
             this.Nombre = nombre;
         }
+
         public List<String> getAllRoles()
         {
             List<String> roles = new List<String>();

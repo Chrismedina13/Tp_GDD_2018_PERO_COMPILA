@@ -7,14 +7,15 @@ using System.Data.SqlTypes;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using FrbaHotel.Support;
 
 
 
-namespace FrbaHotel
+namespace FrbaHotel.Support
 {
     class Database
     {
-        internal static void AddCliente(string nombre, string apellido, string mail, string telefono, string nacionalidad, DateTime fechanacimiento, string Tipoidentificacion, int numeroIdentificacion ,string calle,string numeroCalle, int piso, string dto, String localidad)
+        internal static void AddCliente(string nombre, string apellido, string mail, string telefono, string nacionalidad, DateTime fechanacimiento, string Tipoidentificacion, int numeroIdentificacion, string calle, string numeroCalle, int piso, string dto, String localidad)
         {
 
             SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
@@ -79,7 +80,7 @@ namespace FrbaHotel
             connection.Close();
         }
 
-        internal static bool existeClienteAModificar(string nombre, string apellido, int identificacion ,string email)
+        internal static bool existeClienteAModificar(string nombre, string apellido, int identificacion, string email)
         {
             String cliente_nombre = null;
             SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
@@ -137,8 +138,8 @@ namespace FrbaHotel
             return datos;
         }
 
-        internal static void modificarCliente(String nombre, String apellido, String mail, int identificacion 
-       , String nombreNuevo, String apellidoNuevo, int identificacionNueva, String tipoIdentificacionNueva, String mailNuevo, String telefonoNuevo, DateTime FechaNacimientoNueva, String nacionalidadNueva,String calleNueva, String numeroDeCalleNueva,int pisoNuevo, String dtonuevo,String LocalidadNuevo,String HabilitadoNuevo )
+        internal static void modificarCliente(String nombre, String apellido, String mail, int identificacion
+       , String nombreNuevo, String apellidoNuevo, int identificacionNueva, String tipoIdentificacionNueva, String mailNuevo, String telefonoNuevo, DateTime FechaNacimientoNueva, String nacionalidadNueva, String calleNueva, String numeroDeCalleNueva, int pisoNuevo, String dtonuevo, String LocalidadNuevo, String HabilitadoNuevo)
         {
             SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
             SqlCommand updateClienteCommand = new SqlCommand("UPDATE [GD1C2018].[pero_compila].[Cliente] set cliente_nombre = @nombreNuevo, cliente_apellido = @apellidoNuevo, cliente_identificacion = @identificacionNueva, cliente_tipoIdentificacion = @tipoIdentificacionNueva, cliente_email = @mailNuevo , cliente_telefono = @telefonoNuevo, cliente_direccion = @calleNueva, cliente_calle = @numeroDeCalleNueva, cliente_piso = @pisoNuevo,cliente_depto = @dtonuevo,cliente_localidad = @LocalidadNuevo,cliente_nacionalidad = @nacionalidadNueva, cliente_fecha_nacimiento = @FechaNacimientoNueva, cliente_estado = @HabilitadoNuevo  WHERE cliente_nombre = @nombre and cliente_apellido = @apellido and cliente_identificacion = @identificacion and cliente_email = @mail ");
@@ -214,9 +215,63 @@ namespace FrbaHotel
             else MessageBox.Show("El registro que quiso eliminar no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
+        internal static List<Rol> getUserRoles(string userId)
+        {
+            SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
+            connection.Open();
+            SqlCommand sqlUpdateFailedCommand = new SqlCommand("SELECT rol_nombre, rol_ID, rol_estado FROM pero_compila.rolXUsuario uxr JOIN pero_compila.Rol r ON uxr.rolXUsuario_rol = rol_ID join pero_compila.Usuario u on  uxr.rolXUsuario_usuario= u.usuario_Id where u.usuario_username = @userId");
+            
+            sqlUpdateFailedCommand.Connection = connection;
+            sqlUpdateFailedCommand.Parameters.AddWithValue("userId", userId);
+            SqlDataReader reader = sqlUpdateFailedCommand.ExecuteReader();
+            List<Rol> roles = new List<Rol>();
+            String nombre;
+            Boolean hab;
+            String id;
+            while (reader.Read())
+            {
+                nombre = reader["rol_nombre"].ToString();
+                id = reader["rol_ID"].ToString();
+                hab = reader.GetBoolean(2);
+                roles.Add(new Rol(nombre, id, hab));
+            }
+            connection.Close();
+            return roles;
+        }
 
+        // funcion para obtener las funcionalidades y mostrarlas dependiendo del rol que tenga
 
-
+        static public List<Funcionalidadd> getFuncionalidadesPara(String rolId)
+        {
+            List<Funcionalidadd> list = new List<Funcionalidadd>();
+            SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
+            connection.Open();
+            SqlCommand obtenerFuncionalidadesInactivas = new SqlCommand("SELECT funcionalidad_ID, funcionalidad_descripcion FROM pero_compila.Funcionalidad f LEFT JOIN pero_compila.FuncionalidadXRol fxr ON (funcionalidad_Id = funcionalidadXRol_funcionalidad) WHERE funcionalidadXRol_rol != @rol OR funcionalidadXRol_rol  IS NULL");
+            SqlCommand obtenerFuncionalidadesActivas = new SqlCommand("SELECT funcionalidad_ID, funcionalidad_descripcion FROM pero_compila.Funcionalidad f LEFT JOIN pero_compila.FuncionalidadXRol fxr ON (funcionalidad_Id = funcionalidadXRol_funcionalidad) WHERE funcionalidadXRol_rol != @rol");
+            obtenerFuncionalidadesInactivas.Parameters.AddWithValue("rol", rolId);
+            obtenerFuncionalidadesActivas.Parameters.AddWithValue("rol", rolId);
+            obtenerFuncionalidadesActivas.Connection = connection;
+            obtenerFuncionalidadesInactivas.Connection = connection;
+            SqlDataReader reader = obtenerFuncionalidadesActivas.ExecuteReader();
+            String id;
+            String nombre;
+            while (reader.Read())
+            {
+                id = reader["funcionalidad_ID"].ToString();
+                nombre = reader["funcionalidad_descripcion"].ToString();
+                list.Add(new Funcionalidadd(nombre, id, true));
+            }
+            reader.Close();
+            reader = obtenerFuncionalidadesInactivas.ExecuteReader();
+            while (reader.Read())
+            {
+                id = reader["funcionalidad_ID"].ToString();
+                nombre = reader["funcionalidad_descripcion"].ToString();
+                list.Add(new Funcionalidadd(nombre, id, false));
+            }
+            connection.Close();
+            return list;
+        }
 
 
     }
