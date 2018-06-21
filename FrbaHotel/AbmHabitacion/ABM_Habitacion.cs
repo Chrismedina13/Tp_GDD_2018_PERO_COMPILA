@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrbaHotel.Login;
+
 
 namespace FrbaHotel.AbmHabitacion
 {
     public partial class ABM_Habitacion : Form
     {
-        public ABM_Habitacion()
+        private Seleccion_de_ABMs seleccion_de_ABMs;
+
+        public ABM_Habitacion(Seleccion_de_ABMs seleccion_de_ABMs)
         {
             InitializeComponent();
+            this.seleccion_de_ABMs = seleccion_de_ABMs;
         }
 
         private void AgregarHabitacion_Click(object sender, EventArgs e)

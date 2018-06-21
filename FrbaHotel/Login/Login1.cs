@@ -12,6 +12,7 @@ namespace FrbaHotel
 {
     public partial class Login1 : Form
     {
+        
         public Login1()
         {
             InitializeComponent();

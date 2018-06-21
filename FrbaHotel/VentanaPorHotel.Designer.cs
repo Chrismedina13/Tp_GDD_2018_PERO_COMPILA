@@ -62,6 +62,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 12;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -83,6 +84,7 @@
             this.Controls.Add(this.label1);
             this.Name = "VentanaPorHotel";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.VentanaPorHotel_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

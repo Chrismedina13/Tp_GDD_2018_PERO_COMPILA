@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrbaHotel.Login;
 
 namespace FrbaHotel.AbmRol
 {
     public partial class ABM_Rol : Form
     {
-        public ABM_Rol()
+        private Seleccion_de_ABMs seleccion_de_ABMs;
+
+        public ABM_Rol(Seleccion_de_ABMs seleccion_de_ABMs)
+
         {
             InitializeComponent();
+            this.seleccion_de_ABMs = seleccion_de_ABMs;
+
         }
 
         private void ABM_Rol_Load(object sender, EventArgs e)
@@ -38,6 +44,11 @@ namespace FrbaHotel.AbmRol
         {
             eliminar_rol el = new eliminar_rol();
             el.Show();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

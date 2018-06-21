@@ -14,7 +14,8 @@ namespace FrbaHotel.AbmRol
     {
         public modificar_rol()
         {
-            InitializeComponent(); CargarComboRoles();
+            InitializeComponent(); 
+            CargarComboRoles();
             CargarComboFuncionalidades();
 
             dataGridView1.Columns[1].Visible = false;
@@ -219,6 +220,11 @@ namespace FrbaHotel.AbmRol
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

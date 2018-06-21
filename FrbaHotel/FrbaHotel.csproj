@@ -116,6 +116,7 @@
     <Compile Include="AbmHotel\AgregarHotel.Designer.cs">
       <DependentUpon>AgregarHotel.cs</DependentUpon>
     </Compile>
+    <Compile Include="AbmHotel\Hotel.cs" />
     <Compile Include="AbmHotel\EliminarHotel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,12 +189,21 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="BDComun1.cs" />
-    <Compile Include="VentanaPrincipal.cs">
+    <Compile Include="Login\Seleccion_de_ABMs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaPrincipal.Designer.cs">
+    <Compile Include="Login\Seleccion_de_ABMs.Designer.cs">
+      <DependentUpon>Seleccion_de_ABMs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\VentanaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Support\Database.cs" />
+    <Compile Include="Support\Funcionalidadd.cs" />
+    <Compile Include="Support\Rol.cs" />
     <Compile Include="VentanaPorHotel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,10 +216,10 @@
     <Compile Include="VentanaPorRol.Designer.cs">
       <DependentUpon>VentanaPorRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login1.cs">
+    <Compile Include="Login\Login1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login1.Designer.cs">
+    <Compile Include="Login\Login1.Designer.cs">
       <DependentUpon>Login1.cs</DependentUpon>
     </Compile>
     <Compile Include="GD1C2018DataSet.Designer.cs">
@@ -221,12 +231,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenerarModificacionReserva\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListadoEstadistico\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListadoEstadistico\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -306,7 +310,10 @@
     <EmbeddedResource Include="AbmUsuario\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login1.resx">
+    <EmbeddedResource Include="Login\Seleccion_de_ABMs.resx">
+      <DependentUpon>Seleccion_de_ABMs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login1.resx">
       <DependentUpon>Login1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -324,7 +331,7 @@
     <EmbeddedResource Include="VentanaPorRol.resx">
       <DependentUpon>VentanaPorRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaPrincipal.resx">
+    <EmbeddedResource Include="Login\VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="GD1C2018DataSet.xsc">
@@ -351,7 +358,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ListadoEstadistico\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

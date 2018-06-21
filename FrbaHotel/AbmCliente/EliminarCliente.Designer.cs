@@ -79,7 +79,7 @@
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(164, 20);
             this.textNombre.TabIndex = 19;
-            this.textNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNombre_KeyUp);
+           // this.textNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNombre_KeyUp);
             // 
             // textApellido
             // 
@@ -87,7 +87,7 @@
             this.textApellido.Name = "textApellido";
             this.textApellido.Size = new System.Drawing.Size(164, 20);
             this.textApellido.TabIndex = 20;
-            this.textApellido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textApellido_KeyUp);
+            //this.textApellido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textApellido_KeyUp);
             // 
             // btEliminar
             // 
@@ -97,7 +97,7 @@
             this.btEliminar.TabIndex = 22;
             this.btEliminar.Text = "ELIMINAR";
             this.btEliminar.UseVisualStyleBackColor = true;
-            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
+          //  this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
             // btCancelar
             // 
@@ -107,7 +107,7 @@
             this.btCancelar.TabIndex = 23;
             this.btCancelar.Text = "CANCELAR";
             this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+           // this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // dataGridViewEliminarC
             // 
@@ -133,7 +133,7 @@
             this.textTipoIdentificacion.Name = "textTipoIdentificacion";
             this.textTipoIdentificacion.Size = new System.Drawing.Size(37, 20);
             this.textTipoIdentificacion.TabIndex = 37;
-            this.textTipoIdentificacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textTipoIdentificacion_KeyUp);
+          //  this.textTipoIdentificacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textTipoIdentificacion_KeyUp);
             // 
             // label6
             // 
@@ -150,7 +150,7 @@
             this.textNroIdentificacion.Name = "textNroIdentificacion";
             this.textNroIdentificacion.Size = new System.Drawing.Size(160, 20);
             this.textNroIdentificacion.TabIndex = 34;
-            this.textNroIdentificacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNroIdentificacion_KeyUp);
+           // this.textNroIdentificacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textNroIdentificacion_KeyUp);
             // 
             // label4
             // 
@@ -167,7 +167,7 @@
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(164, 20);
             this.textEmail.TabIndex = 39;
-            this.textEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEmail_KeyUp);
+          //  this.textEmail.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textEmail_KeyUp);
             // 
             // label5
             // 

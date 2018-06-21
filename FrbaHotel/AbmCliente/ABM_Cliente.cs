@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrbaHotel.Login;
 
 namespace FrbaHotel.AbmCliente
 {
+
+     
     public partial class ABM_Cliente : Form
     {
-        public ABM_Cliente()
+        private Seleccion_de_ABMs seleccion_de_ABMs;
+
+        public ABM_Cliente(Seleccion_de_ABMs seleccion_de_ABMs)
         {
             InitializeComponent();
+            this.seleccion_de_ABMs = seleccion_de_ABMs;
         }
 
         private void button2_Click(object sender, EventArgs e)

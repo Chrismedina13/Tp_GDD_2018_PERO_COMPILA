@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrbaHotel.Login;
 
 namespace FrbaHotel.AbmHotel
 {
     public partial class ABM_Hotel : Form
     {
-        public ABM_Hotel()
+         private Seleccion_de_ABMs seleccion_de_ABMs;
+
+         public ABM_Hotel(Seleccion_de_ABMs seleccion_de_ABMs)
         {
             InitializeComponent();
+            this.seleccion_de_ABMs = seleccion_de_ABMs;
         }
 
         private void AgregarHotel_Click(object sender, EventArgs e)
