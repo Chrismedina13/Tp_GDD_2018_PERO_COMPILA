@@ -32,11 +32,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.funcionalidadesDGV = new System.Windows.Forms.DataGridView();
             this.lblLstFunc = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionalidadesDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -47,12 +47,13 @@
             this.btnVolver.TabIndex = 20;
             this.btnVolver.Text = "VOLVER";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click_1);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.funcionalidadesDGV);
             this.groupBox1.Controls.Add(this.lblLstFunc);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Location = new System.Drawing.Point(173, 43);
@@ -68,6 +69,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(193, 20);
             this.textBox1.TabIndex = 6;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnGuardar
             // 
@@ -80,14 +82,15 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // dataGridView1
+            // funcionalidadesDGV
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 104);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(365, 150);
-            this.dataGridView1.TabIndex = 3;
+            this.funcionalidadesDGV.AllowUserToDeleteRows = false;
+            this.funcionalidadesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.funcionalidadesDGV.Location = new System.Drawing.Point(29, 104);
+            this.funcionalidadesDGV.Name = "funcionalidadesDGV";
+            this.funcionalidadesDGV.Size = new System.Drawing.Size(365, 150);
+            this.funcionalidadesDGV.TabIndex = 3;
+            this.funcionalidadesDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.funcionalidadesDGV_CellContentClick);
             // 
             // lblLstFunc
             // 
@@ -116,9 +119,10 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Alta_Rol_Funcionalidad";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Alta_Rol_Funcionalidad_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionalidadesDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,7 +133,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView funcionalidadesDGV;
         private System.Windows.Forms.Label lblLstFunc;
         private System.Windows.Forms.Label lblNombre;
     }

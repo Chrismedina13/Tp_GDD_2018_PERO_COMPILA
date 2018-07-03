@@ -30,8 +30,10 @@ namespace FrbaHotel.AbmRol
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Alta_Rol_Funcionalidad alta = new Alta_Rol_Funcionalidad();
-            alta.Show();
+            
+
+          Alta_Rol_Funcionalidad alta = new Alta_Rol_Funcionalidad();
+         alta.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -49,6 +51,13 @@ namespace FrbaHotel.AbmRol
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+           
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Alta_Rol altaRol = new Alta_Rol();
+            altaRol.Show();
         }
     }
 }

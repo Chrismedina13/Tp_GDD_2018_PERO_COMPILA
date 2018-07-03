@@ -15,6 +15,7 @@ namespace FrbaHotel.AbmRol
         public String descripcion { get; set; }
         public int IdRolXFunc { get; set; }
 
+    
 
         public List<String> getAllFuncionalidades()
         {
@@ -27,8 +28,8 @@ namespace FrbaHotel.AbmRol
 
                 while (reader.Read())
                 {
-                    Funcionalidad f = new Funcionalidad();
-                    //f.IdFuncionalidad = reader.GetInt32(0);
+                 Funcionalidad f = new Funcionalidad();
+                   f.IdFuncionalidad = reader.GetInt32(0);
                     descripcion = reader.GetString(0);
                     func.Add(descripcion);
                 }
@@ -47,10 +48,11 @@ namespace FrbaHotel.AbmRol
 
                 while (reader.Read())
                 {
-                    Funcionalidad f = new Funcionalidad();
+                   Funcionalidad f = new Funcionalidad();
                     f.IdFuncionalidad = reader.GetInt32(0);
                     f.descripcion = reader.GetString(1);
                     func.Add(f);
+                  
                 }
                 Conexion.Close();
             }
@@ -136,11 +138,12 @@ namespace FrbaHotel.AbmRol
 
                 while (reader.Read())
                 {
-                    Funcionalidad f = new Funcionalidad();
+                Funcionalidad f = new Funcionalidad();
                     f.IdFuncionalidad = reader.GetInt32(0);
                     f.descripcion = reader.GetString(1);
                     f.IdRolXFunc = reader.GetInt32(2);
                     funcionalidadesIds.Add(f.IdFuncionalidad);
+                  
                 }
                 Conexion.Close();
             }
@@ -148,7 +151,7 @@ namespace FrbaHotel.AbmRol
         }
         public int getIdFuncionalidadXRol(String rol, int idFunc)
         {
-            // List<int> funcionalidadesIds = new List<int>();
+        //  List<int> funcionalidadesIds = new List<int>();
             Rol r = new Rol();
             int idRol = r.getidRolPorNombre(rol);
             int f = 0;
@@ -159,6 +162,7 @@ namespace FrbaHotel.AbmRol
 
                 while (reader.Read())
                 {
+
 
                     //f.IdFuncionalidad = reader.GetInt32(0);
                     // f.descripcion = reader.GetString(1);

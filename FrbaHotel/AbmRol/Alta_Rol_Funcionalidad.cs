@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FrbaHotel.Support;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,29 +20,30 @@ namespace FrbaHotel.AbmRol
         private void CargarComboFuncionalidades()
         {
             //Vaciar comboBox
-            dataGridView1.Columns.Clear();
-            dataGridView1.DataSource = null;
-            Funcionalidad f = new Funcionalidad();
+            funcionalidadesDGV.Columns.Clear();
+            funcionalidadesDGV.DataSource = null;
+          Funcionalidad f = new Funcionalidad();
             List<Funcionalidad> listFunc = f.getListFuncionalidades();
-            //Asignar la propiedad DataSource
+           //Asignar la propiedad DataSource
             DataGridViewCheckBoxColumn chkbox = new DataGridViewCheckBoxColumn();
-            dataGridView1.Columns.Add(chkbox);
+            funcionalidadesDGV.Columns.Add(chkbox);
             chkbox.HeaderText = "Check Data";
             chkbox.Name = "seleccion";
 
-            this.dataGridView1.DataSource = listFunc;
-            //this.dataGridView1.DataBindin();
-
+            this.funcionalidadesDGV.DataSource = listFunc;
+           
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+
+           try
             {
                 RolDAL roldal = new RolDAL();
                 Rol rol = new Rol();
                 if (textBox1.Text != "")
                 {
+
                     if (roldal.RolId(textBox1.Text) > 0)
                     {
                         MessageBox.Show("Error. Nombre del rol ya existente");
@@ -65,6 +67,8 @@ namespace FrbaHotel.AbmRol
             {
                 MessageBox.Show("Error en el alta de rol -" + ex.Message);
             }
+             
+
         }
         private int agregarFuncionalidades(int idRol)
         {
@@ -72,9 +76,9 @@ namespace FrbaHotel.AbmRol
             List<int> ChkedRow = new List<int>();
             try
             {
-                for (i = 0; i <= dataGridView1.RowCount - 1; i++)
+                for (i = 0; i <= funcionalidadesDGV.RowCount - 1; i++)
                 {
-                    if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["seleccion"].Value) == true)
+                    if (Convert.ToBoolean(funcionalidadesDGV.Rows[i].Cells["seleccion"].Value) == true)
                     {
                         ChkedRow.Add(i);
                     }
@@ -82,7 +86,7 @@ namespace FrbaHotel.AbmRol
                 if (ChkedRow.Count == 0) { return 0; }
                 foreach (int k in ChkedRow)
                 {
-                    Funcionalidad.insert(idRol, Int32.Parse(dataGridView1.Rows[k].Cells[1].Value.ToString()));
+                    Funcionalidad.insert(idRol, Int32.Parse(funcionalidadesDGV.Rows[k].Cells[1].Value.ToString()));
                 }
                 MessageBox.Show("Rol y funcionalidades registrados Correctamente!");
                 Alta_Rol_Funcionalidad af = new Alta_Rol_Funcionalidad();
@@ -90,6 +94,7 @@ namespace FrbaHotel.AbmRol
             }
             catch (Exception e) { return 0; }
             return 0;
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -108,6 +113,27 @@ namespace FrbaHotel.AbmRol
         }
 
         private void Alta_Rol_Funcionalidad_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVolver_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+       {
+
+        }
+
+        private void Alta_Rol_Funcionalidad_Load_1(object sender, EventArgs e)
+        {
+          
+        
+        }
+
+        private void funcionalidadesDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

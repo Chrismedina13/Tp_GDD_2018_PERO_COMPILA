@@ -10,6 +10,9 @@ namespace FrbaHotel.AbmRol
 {
     public class Rol
     {
+       
+        public String id  {get;set;}
+        public Boolean hab {get;set;}
         public int Id { get; set; }
         public String Nombre { get; set; }
         public Funcionalidad funcionalidad { get; set; }
@@ -19,6 +22,13 @@ namespace FrbaHotel.AbmRol
         {
 
         }
+      
+        public Rol(String nombre, String id, Boolean estaHab) {
+            this.Nombre = nombre;
+            this.id = id;
+            this.hab = estaHab;
+        }
+          
 
         public Rol(int id, string nombre)
         {
@@ -26,6 +36,13 @@ namespace FrbaHotel.AbmRol
             this.Nombre = nombre;
         }
 
+      /*  public Rol(string nombre, string id)
+        {
+            // TODO: Complete member initialization
+            this.Nombre = nombre;
+            this.id = id;
+        }
+        */
         public List<String> getAllRoles()
         {
             List<String> roles = new List<String>();

@@ -5,6 +5,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace FrbaHotel.AbmRol
 {
@@ -46,12 +48,15 @@ namespace FrbaHotel.AbmRol
                 return false;
             }
         }
+        
+       
+        
         public static int insert(String Nombre)
         {
             SqlConnection Conexion = BDComun.ObtenerConexion();
             try
             {
-                SqlCommand comando = new SqlCommand("pero_compila.sp_alta_solo_rol", Conexion);
+                SqlCommand comando = new SqlCommand("pero_compila.sp_solo_alta_rol", Conexion);
                 comando.CommandType = CommandType.StoredProcedure;
                 //se limpian los parámetros
                 comando.Parameters.Clear();
@@ -78,11 +83,12 @@ namespace FrbaHotel.AbmRol
             }
             catch (Exception ex)
             {
+               // System.Windows.Forms.MessageBox.Show(ex.Message, "ERRROR", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.);
                 Conexion.Close();
                 return 0;
             }
         }
-
+       
         //public static bool ModificarRol(int id, String nombre, int habilitado, String Func)
         //{
         //    int Valor_Retornado = 0;
