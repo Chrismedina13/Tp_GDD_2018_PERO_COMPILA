@@ -31,7 +31,6 @@ namespace FrbaHotel.AbmRol
         private void button1_Click(object sender, EventArgs e)
         {
             
-
           Alta_Rol_Funcionalidad alta = new Alta_Rol_Funcionalidad();
          alta.Show();
         }

@@ -135,7 +135,9 @@ namespace FrbaHotel.AbmRol
                         {
                             Funcionalidad.delete(r.getidRolPorNombre(rol), i, f.getIdFuncionalidadXRol(rol, i));
                         }
-                        MessageBox.Show("Se modificó el rol " + textBox1.Text);
+                        //MessageBox.Show("Se modificó el rol " + textBox1.Text);
+                        MessageBox.Show("Se modificó el rol ");
+                        this.Close();
                     }
                     else
                     {
@@ -180,7 +182,7 @@ namespace FrbaHotel.AbmRol
             {
 
                 rol.Nombre = textBox1.Text;
-                if (RolDAL.ModificarRol(roldal.RolId(textBox1.Text), rol.Nombre, Convert.ToInt32(checkBox1.Checked)))
+                if (RolDAL.ModificarRol(roldal.RolId(comboBox1.Text), rol.Nombre, Convert.ToInt32(checkBox1.Checked)))
                 {
 
                     int resultado = agregarFuncionalidades(textBox1.Text);
@@ -226,6 +228,27 @@ namespace FrbaHotel.AbmRol
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i;
+            for (i = 0; i <= dataGridView1.RowCount - 1; i++)
+            {
+
+                dataGridView1.Rows[i].Cells["seleccion"].Value = false;
+
+            }
+            int IdProducto = Convert.ToInt32(comboBox1.SelectedValue);
+            string Descripcion = Convert.ToString(comboBox1.Text);
+            if (IdProducto > 0)
+            {
+                textBox1.Text = Descripcion;
+            }
+
+            BuscarFuncionalidadesPorRol(textBox1.Text);
+
 
         }
        
