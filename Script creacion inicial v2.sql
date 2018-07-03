@@ -528,6 +528,20 @@ estadiaXConsumible_consumible int not null references [pero_compila].Consumible,
 
 
 -- /*
+
+-- go
+--create procedure [pero_compila].[sp_solo_alta_rol] 
+--(@nombre varchar(255), @habilitado  bit)
+--as
+--begin
+--	declare @id int
+--	insert into pero_compila.Rol (rol_nombre, rol_estado)
+--	values(@nombre, @habilitado)
+
+--	Select Max(rol_Id) from [pero_compila].[Rol]
+--	--select @id = scope_identity()[pero_compila].[Rol]
+--end
+
 -- *********************Obtiene todos los roles que se encuentran habilitados*********************
 -- */
 -- go
