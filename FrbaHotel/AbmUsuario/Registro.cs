@@ -23,11 +23,15 @@ namespace FrbaHotel.AbmUsuario
         {
 
             InitializeComponent();
-            this.seleccion_de_ABMs = seleccion_de_ABMs;
+            CargarComboRol();
+            CargarListadoHoteles();
+           this.seleccion_de_ABMs = seleccion_de_ABMs;
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
+
+
 
         }
         private void CargarComboRol()
@@ -46,8 +50,8 @@ namespace FrbaHotel.AbmUsuario
 
             dataGridView1.Columns.Clear();
             dataGridView1.DataSource = null;
-            Rol s = new Rol();
-            List<Rol> listFunc = s.getAllRol();
+            Rol h = new Rol();
+            List<Rol> listFunc = h.getAllRol();
             //Asignar la propiedad DataSource
             DataGridViewCheckBoxColumn chkbox = new DataGridViewCheckBoxColumn();
             dataGridView1.Columns.Add(chkbox);
@@ -64,15 +68,15 @@ namespace FrbaHotel.AbmUsuario
             //Vaciar comboBox
             dataGridView2.Columns.Clear();
             dataGridView2.DataSource = null;
-           // --------Hotel h = new Hotel();
-            //--------------List<Hotel> listFunc = s.getListHoteles();
-            //Asignar la propiedad DataSource
+           Hotel h = new Hotel();
+           List<Hotel> listFunc = h.getListHoteles();
+            //Asignar la propiedad DataSource;
             DataGridViewCheckBoxColumn chkbox = new DataGridViewCheckBoxColumn();
             dataGridView2.Columns.Add(chkbox);
             chkbox.HeaderText = "Check Data";
             chkbox.Name = "seleccion";
 
-            //--------this.dataGridView2.DataSource = listFunc;
+            this.dataGridView2.DataSource = listFunc;
             //this.dataGridView1.DataBindin();
 
         }
@@ -93,9 +97,9 @@ namespace FrbaHotel.AbmUsuario
                         int res = UsuarioDAL.CrearCuenta(txtUsuario.Text, txtContrasenia.Text);
                         if (res > 0)
                         {
-                            //verificarSucursalCobrador(res);
-                            //verificarRolesCobrador(res);
-                           // MessageBox.Show("Cuenta del Cobrador Creada Correctamente !");
+                            verificarHotelCobrador(res);
+                            verificarRolesCobrador(res);
+                           MessageBox.Show("Cuenta del Cobrador Creada Correctamente !");
                         }
                         else
                         {
@@ -115,7 +119,30 @@ namespace FrbaHotel.AbmUsuario
             }
         }
 
+        private bool verificarRolesCobrador(int id)
+        {
+            int i = 0;
+            List<int> ChkedRow = new List<int>();
+            try
+            {
+                for (i = 0; i <= dataGridView1.RowCount - 1; i++)
+                {
+                    if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["seleccion"].Value) == true)
+                    {
+                        ChkedRow.Add(i);
+                    }
+                }
+                if (ChkedRow.Count == 0 && ChkedRow.Count > 1) { return false; }
+                foreach (int k in ChkedRow)
+                {
+                    int rol = Int32.Parse(dataGridView1.Rows[k].Cells[1].Value.ToString());
+                    Rol.insertRolXUsuario(id, rol);
 
+                } return true;
+            }
+            catch (Exception e) { return false; }
+
+        }
         private int CantCheckHot()
         {
             int i = 0;
@@ -170,6 +197,32 @@ namespace FrbaHotel.AbmUsuario
 
         }
 
+        private bool verificarHotelCobrador(int id)
+        {
+            int i = 0;
+            List<int> ChkedRow = new List<int>();
+            try
+            {
+                for (i = 0; i <= dataGridView2.RowCount - 1; i++)
+                {
+                    if (Convert.ToBoolean(dataGridView2.Rows[i].Cells["seleccion"].Value) == true)
+                    {
+                        ChkedRow.Add(i);
+                    }
+                }
+                if (ChkedRow.Count == 0 && ChkedRow.Count > 1) { return false; }
+                foreach (int k in ChkedRow)
+                {
+                    int hotel = Int32.Parse(dataGridView2.Rows[k].Cells[1].Value.ToString());
+                    Hotel.insert(id, hotel);
+
+                } return true;
+            }
+            catch (Exception e) { return false; }
+
+        }
+
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -189,8 +242,13 @@ namespace FrbaHotel.AbmUsuario
         {
 
         }
-
+         
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Registro_Load(object sender, EventArgs e)
         {
 
         }

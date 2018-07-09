@@ -182,7 +182,7 @@ namespace FrbaHotel.AbmRol
             {
 
                 rol.Nombre = textBox1.Text;
-                if (RolDAL.ModificarRol(roldal.RolId(comboBox1.Text), rol.Nombre, Convert.ToInt32(checkBox1.Checked)))
+                if (RolDAL.ModificarRol(RolDAL.RolId(comboBox1.Text), rol.Nombre, Convert.ToInt32(checkBox1.Checked)))
                 {
 
                     int resultado = agregarFuncionalidades(textBox1.Text);

@@ -655,19 +655,19 @@ estadiaXConsumible_consumible int not null references [pero_compila].Consumible,
 -- end
 
 -- /*
--- *********************Alta del usuario con sucursales*********************
+-- *********************Alta del usuario con hotel*********************
 -- */
+ --go
+ --create procedure [pero_compila].[sp_alta_usuarioXHotel]
+ --(@idUsuario int, @idHotel int)
+ --as
+ --begin
+--	insert into pero_compila.UsuarioXHotel
+ --	(usuarioXHotel_usuario, usuarioXHotel_hotel)
+ --	values(@idUsuario, @idHotel)
+ --	--select @@IDENTITY
+ --end
 
--- go
--- create procedure [pero_compila].[sp_alta_usuarioXSucursal]
--- (@idUsuario int, @idSucursal  int)
--- as
--- begin
--- 	insert into pero_compila.UsuarioXSucursal
--- 	(usuarioXSucursal_usuario, usuarioXSucursal_sucursal)
--- 	values(@idUsuario, @idSucursal)
--- 	--select @@IDENTITY
--- end
 -- /*
 -- *********************Realiza el alta de un usuario con roles*********************
 -- */

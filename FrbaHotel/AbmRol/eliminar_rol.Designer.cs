@@ -70,6 +70,7 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Rol";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label2
             // 
@@ -79,6 +80,8 @@
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Sin datos";
+            this.label2.Visible = false;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -95,6 +98,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(193, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // lblNombre
             // 
@@ -104,6 +108,7 @@
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
+            this.lblNombre.Visible = false;
             // 
             // eliminar_rol
             // 

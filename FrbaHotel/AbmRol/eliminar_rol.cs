@@ -54,23 +54,34 @@ namespace FrbaHotel.AbmRol
 
         private void eliminar_rol_Load(object sender, EventArgs e)
         {
-            this.Close();
+           // this.Close();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int IdProducto = Convert.ToInt32(comboBox1.SelectedValue);
+           // MessageBox.Show("fdsf " + comboBox1.SelectedIndex);
+           // int IdProducto = Convert.ToInt32(comboBox1.SelectedIndex);
+
+          
+          
+            MessageBox.Show("fdsf    " + comboBox1.Text);
             string Descripcion = Convert.ToString(comboBox1.Text);
+
+
+            int IdProducto = RolDAL.RolId(Descripcion);
+            MessageBox.Show("fdsf   " + IdProducto);
+          
             if (RolDAL.ModificarRol(IdProducto, label2.Text, 0))
             {
                 if (RolDAL.SacarRolATodosLosUsuarios(IdProducto) > 0)
                 {
 
-                    MessageBox.Show("Se eliminó el rol " + label2.Text);
+                    MessageBox.Show("Se eliminó el rol " + Descripcion);
                 }
                 else
                 {
-                    MessageBox.Show("Error al intentar eliminar el rol seleccionado " + IdProducto);
+                    MessageBox.Show("Fue eliminado, pero no se encontraron usuarios asociados al Rol  " + Descripcion);
+                    //MessageBox.Show("Error al intentar eliminar el rol seleccionado " + IdProducto);
                 }
             }
             else
@@ -81,6 +92,26 @@ namespace FrbaHotel.AbmRol
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            int IdProducto = Convert.ToInt32(comboBox1.SelectedValue);
+            string Descripcion = Convert.ToString(comboBox1.Text);
+            if (IdProducto > 0)
+            {
+                label2.Text = Descripcion;
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

@@ -244,7 +244,7 @@ namespace FrbaHotel.AbmRol
         }
 
 
-        public int RolId(String nombreRol)
+        public static int RolId(String nombreRol)
         {
             int id = 0;
             using (SqlConnection Conexion = BDComun.ObtenerConexion())

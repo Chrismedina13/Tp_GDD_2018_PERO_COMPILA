@@ -164,6 +164,7 @@
             this.Controls.Add(this.Usuario);
             this.Name = "Registro";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

@@ -44,7 +44,7 @@ namespace FrbaHotel.AbmRol
                 if (textBox1.Text != "")
                 {
 
-                    if (roldal.RolId(textBox1.Text) > 0)
+                    if (RolDAL.RolId(textBox1.Text) > 0)
                     {
                         MessageBox.Show("Error. Nombre del rol ya existente");
                     }
@@ -52,6 +52,7 @@ namespace FrbaHotel.AbmRol
                     {
                         rol.Nombre = textBox1.Text;
                         int res = RolDAL.insert(rol.Nombre);
+                        MessageBox.Show("Rol registrados Correctamente!");
                         if (res > 0)
                         {
                             int resultado = agregarFuncionalidades(res);
