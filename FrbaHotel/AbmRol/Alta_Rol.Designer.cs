@@ -32,7 +32,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboFuncionalidades = new System.Windows.Forms.ComboBox();
             this.lblLstFunc = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -60,7 +60,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboFuncionalidades);
             this.groupBox1.Controls.Add(this.lblLstFunc);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Location = new System.Drawing.Point(157, 99);
@@ -77,12 +77,13 @@
             this.textBox1.Size = new System.Drawing.Size(193, 20);
             this.textBox1.TabIndex = 3;
             // 
-            // comboBox1
+            // comboFuncionalidades
             // 
-            this.comboBox1.Location = new System.Drawing.Point(183, 60);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboFuncionalidades.Location = new System.Drawing.Point(183, 60);
+            this.comboFuncionalidades.Name = "comboFuncionalidades";
+            this.comboFuncionalidades.Size = new System.Drawing.Size(212, 21);
+            this.comboFuncionalidades.TabIndex = 0;
+            this.comboFuncionalidades.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // lblLstFunc
             // 
@@ -124,7 +125,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboFuncionalidades;
         private System.Windows.Forms.Label lblLstFunc;
         private System.Windows.Forms.Label lblNombre;
 

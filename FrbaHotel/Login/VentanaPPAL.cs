@@ -18,10 +18,7 @@ namespace FrbaHotel.Login
         public String rolUser { get; set; }
        
         List<Funcionalidad> funcsDelRolDelUser;
-        private Support.Rol rol;
-        private string rolUser1;
-        FrbaHotel.Support.Rol roll;
-    
+       
         public VentanaPPAL(FrbaHotel.Support.Rol roll, string rolUsuario)
         {
         InitializeComponent();

@@ -12,24 +12,28 @@ namespace FrbaHotel.AbmRol
 {
     public partial class Alta_Rol : Form
     {
+        private List<Funcionalidad> funcionalidades;
         public Alta_Rol()
         {
             InitializeComponent();
             CargarComboFuncionalidades();
+            Funcionalidad f = new Funcionalidad();
+            funcionalidades = f.getListFuncionalidades();
+            foreach (Funcionalidad func in funcionalidades)
+                comboFuncionalidades.Items.Add(func.descripcion);
         }
         private void CargarComboFuncionalidades()
         {
             //Vaciar comboBox
-            comboBox1.DataSource = null;
-          ////////  Funcionalidad f = new Funcionalidad();
+            comboFuncionalidades.DataSource = null;
+           Funcionalidad f = new Funcionalidad();
             //Indicar qué propiedad se verá en la lista
-            this.comboBox1.DisplayMember = "funcionalidad_descripcion";
+            this.comboFuncionalidades.DisplayMember = "funcionalidad_descripcion";
             //Indicar qué valor tendrá cada ítem
-            this.comboBox1.ValueMember = "ID";
+            this.comboFuncionalidades.ValueMember = "ID";
             //Asignar la propiedad DataSource
-           //////// this.comboBox1.DataSource = f.getAllFuncionalidades();
-
-
+          //  this.comboBox1.DataSource = f.getListFuncionalidades();
+           
         }
 
         private void Alta_Rol_Load(object sender, EventArgs e)
@@ -82,6 +86,15 @@ namespace FrbaHotel.AbmRol
 
 
         private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+           
+            //Limiamos lo demas?
+            textBox1.Text = "";
+            comboFuncionalidades.SelectedItem = null;
+           
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

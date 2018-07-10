@@ -71,12 +71,10 @@ C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.AbmRol.Alta_R
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.AbmRol.eliminar_rol.resources
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.AbmRol.modificar_rol.resources
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.AbmUsuario.Registro.resources
-C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.Login.Seleccion_de_ABMs.resources
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.Login1.resources
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.Properties.Resources.resources
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.VentanaPorHotel.resources
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.VentanaPorRol.resources
-C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.VentanaPrincipal.resources
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.csproj.GenerateResource.Cache
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\bin\Debug\FrbaHotel.exe
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\bin\Debug\FrbaHotel.pdb

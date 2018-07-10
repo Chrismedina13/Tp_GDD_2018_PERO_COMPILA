@@ -251,6 +251,19 @@ namespace FrbaHotel.AbmRol
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+            textBox1.Text = "";
+            comboBox1.SelectedItem = null;
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
        
 
     }

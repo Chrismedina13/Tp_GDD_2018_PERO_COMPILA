@@ -195,31 +195,19 @@
     <Compile Include="Login\VentanaPPAL.Designer.cs">
       <DependentUpon>VentanaPPAL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\Seleccion_de_ABMs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\Seleccion_de_ABMs.Designer.cs">
-      <DependentUpon>Seleccion_de_ABMs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login\VentanaPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\VentanaPrincipal.Designer.cs">
-      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Support\Database.cs" />
     <Compile Include="Support\Funcionalidadd.cs" />
     <Compile Include="Support\Rol.cs" />
-    <Compile Include="VentanaPorHotel.cs">
+    <Compile Include="Login\VentanaPorHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaPorHotel.Designer.cs">
+    <Compile Include="Login\VentanaPorHotel.Designer.cs">
       <DependentUpon>VentanaPorHotel.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaPorRol.cs">
+    <Compile Include="Login\VentanaPorRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaPorRol.Designer.cs">
+    <Compile Include="Login\VentanaPorRol.Designer.cs">
       <DependentUpon>VentanaPorRol.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Login1.cs">
@@ -316,9 +304,6 @@
     <EmbeddedResource Include="AbmUsuario\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\Seleccion_de_ABMs.resx">
-      <DependentUpon>Seleccion_de_ABMs.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\Login1.resx">
       <DependentUpon>Login1.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,14 +322,11 @@
     <EmbeddedResource Include="RegistrarEstadia\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaPorHotel.resx">
+    <EmbeddedResource Include="Login\VentanaPorHotel.resx">
       <DependentUpon>VentanaPorHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaPorRol.resx">
+    <EmbeddedResource Include="Login\VentanaPorRol.resx">
       <DependentUpon>VentanaPorRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login\VentanaPrincipal.resx">
-      <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="GD1C2018DataSet.xsc">
       <DependentUpon>GD1C2018DataSet.xsd</DependentUpon>
