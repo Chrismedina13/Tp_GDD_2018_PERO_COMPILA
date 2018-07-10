@@ -14,12 +14,12 @@ namespace FrbaHotel.AbmHabitacion
 {
     public partial class ABM_Habitacion : Form
     {
-        private Seleccion_de_ABMs seleccion_de_ABMs;
+        
 
-        public ABM_Habitacion(Seleccion_de_ABMs seleccion_de_ABMs)
+        public ABM_Habitacion()
         {
             InitializeComponent();
-            this.seleccion_de_ABMs = seleccion_de_ABMs;
+           
         }
 
         private void AgregarHabitacion_Click(object sender, EventArgs e)
@@ -43,6 +43,11 @@ namespace FrbaHotel.AbmHabitacion
         private void Volver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ABM_Habitacion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

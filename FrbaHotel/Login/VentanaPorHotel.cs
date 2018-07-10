@@ -1,5 +1,6 @@
 ﻿using FrbaHotel.AbmHotel;
 using FrbaHotel.Support;
+using FrbaHotel.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,8 @@ namespace FrbaHotel
         {
             this.nombreUser = idUser;
 
-            rolUser = rolUsuario;
+            this.rolUser = rolUsuario;
+
             InitializeComponent();
             CargarComboHotel(idUser, rolUsuario);
 
@@ -58,13 +60,13 @@ namespace FrbaHotel
         {
 
             List<FrbaHotel.Support.Rol> roles = Database.getUserRoles(nombreUser);
-            //int top = 50;
-            //int left = 150;
+            
             foreach (FrbaHotel.Support.Rol rol in roles)
             {
                 if (rol.estaHabilitado)
                 {
-                    VentanaPrincipal form1 = new VentanaPrincipal(rol, nombreUser);
+                 
+                   VentanaPPAL form1 = new VentanaPPAL(rol, rolUser);
                     this.Close();
                     form1.Show();
 
@@ -75,29 +77,6 @@ namespace FrbaHotel
                 comboBox1.Hide();
             }
 
-
-            /*if (rolUser == "Administrativo")
-            {
-                VentanaPrincipal nuevaVentanta = new VentanaPrincipal(nombreUser, rolUser);
-                nuevaVentanta.ShowDialog();
-                this.Hide();
-            }
-            else if (rolUser == "Recepcionista")
-            {
-                VentanaRecepcionista vcob = new VentanaRecepcionista(nombreUser, rolUser);
-                vcob.Show();
-                this.Hide();
-            }
-
-            else
-            {
-
-                VentanaPrincipal nuevaVentanta = new VentanaPrincipal(nombreUser, rolUser);
-                nuevaVentanta.ShowDialog();
-                this.Hide();
-
-            }
-             */
         }
         private void VentanaPorHotel_Load(object sender, EventArgs e)
         {

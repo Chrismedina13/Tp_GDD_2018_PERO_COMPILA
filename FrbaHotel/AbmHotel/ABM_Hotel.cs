@@ -13,12 +13,12 @@ namespace FrbaHotel.AbmHotel
 {
     public partial class ABM_Hotel : Form
     {
-         private Seleccion_de_ABMs seleccion_de_ABMs;
+        
 
-         public ABM_Hotel(Seleccion_de_ABMs seleccion_de_ABMs)
+         public ABM_Hotel()
         {
             InitializeComponent();
-            this.seleccion_de_ABMs = seleccion_de_ABMs;
+           
         }
 
         private void AgregarHotel_Click(object sender, EventArgs e)
@@ -42,6 +42,11 @@ namespace FrbaHotel.AbmHotel
         private void Volver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ABM_Hotel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

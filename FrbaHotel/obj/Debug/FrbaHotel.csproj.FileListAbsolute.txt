@@ -80,3 +80,5 @@ C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.VentanaPrinci
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.csproj.GenerateResource.Cache
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\bin\Debug\FrbaHotel.exe
 C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\bin\Debug\FrbaHotel.pdb
+C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.Login.VentanaPPAL.resources
+C:\GDD-2018\Tp_GDD_2018_PERO_COMPILA\FrbaHotel\obj\Debug\FrbaHotel.RegistrarEstadia.Form1.resources

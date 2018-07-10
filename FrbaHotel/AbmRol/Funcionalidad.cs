@@ -10,11 +10,11 @@ namespace FrbaHotel.AbmRol
 {
     public class Funcionalidad
     {
-
+       
         public int IdFuncionalidad { get; set; }
         public String descripcion { get; set; }
         public int IdRolXFunc { get; set; }
-
+    
     
 
         public List<String> getAllFuncionalidades()
@@ -173,8 +173,32 @@ namespace FrbaHotel.AbmRol
             }
             return f;
         }
+        //LA AGREGUUE YOOO
+
+        public static List<Funcionalidad> getFuncionalidadesXRol(string rol)
+        {
+            List<Funcionalidad> funcionalidadesRol = new List<Funcionalidad>();
+            Rol r = new Rol();
+            int idRol = r.getidRolPorNombre(rol);
+            using (SqlConnection Conexion = BDComun.ObtenerConexion())
+            {
+                SqlCommand Comando = new SqlCommand(String.Format("SELECT DISTINCT funcionalidad_descripcion from pero_compila.Funcionalidad f join pero_compila.FuncionalidadXRol fxr on(f.funcionalidad_Id=fxr.funcionalidadXRol_funcionalidad) where fxr.funcionalidadXRol_rol='{0}'", idRol), Conexion);
+                SqlDataReader reader = Comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Funcionalidad f = new Funcionalidad();
+                    //  f.IdFuncionalidad = reader.GetInt32(0);
+                    f.descripcion = reader.GetString(0);
+                    //f.IdRolXFunc = reader.GetInt32(2);
+                    funcionalidadesRol.Add(f);
 
 
+                }
+                Conexion.Close();
+            }
+            return funcionalidadesRol;
+        }
 
         public static int delete(int idRol, int idFuncionalidad, int idFuncXRol)
         {
@@ -210,6 +234,8 @@ namespace FrbaHotel.AbmRol
                 return 0;
             }
         }
+
+        public string Descripcion { get; set; }
     }
 }
 

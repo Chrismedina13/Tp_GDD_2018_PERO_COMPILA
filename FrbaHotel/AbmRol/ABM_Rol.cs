@@ -13,13 +13,13 @@ namespace FrbaHotel.AbmRol
 {
     public partial class ABM_Rol : Form
     {
-        private Seleccion_de_ABMs seleccion_de_ABMs;
+        
 
-        public ABM_Rol(Seleccion_de_ABMs seleccion_de_ABMs)
+        public ABM_Rol( )
 
         {
             InitializeComponent();
-            this.seleccion_de_ABMs = seleccion_de_ABMs;
+        
 
         }
 
@@ -56,8 +56,7 @@ namespace FrbaHotel.AbmRol
         {
             Alta_Rol_Funcionalidad altaFunc = new Alta_Rol_Funcionalidad();
             altaFunc.Show();
-            //Alta_Rol altaRol = new Alta_Rol();
-            //altaRol.Show();
+       
         }
 
         private void button4_Click_1(object sender, EventArgs e)

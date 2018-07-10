@@ -85,6 +85,7 @@
             this.Controls.Add(this.AgregarHotel);
             this.Name = "ABM_Hotel";
             this.Text = "ABM Hotel";
+            this.Load += new System.EventHandler(this.ABM_Hotel_Load);
             this.ResumeLayout(false);
 
         }

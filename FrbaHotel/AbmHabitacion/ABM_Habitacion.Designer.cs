@@ -85,6 +85,7 @@
             this.Controls.Add(this.AgregarHabitacion);
             this.Name = "ABM_Habitacion";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.ABM_Habitacion_Load);
             this.ResumeLayout(false);
 
         }

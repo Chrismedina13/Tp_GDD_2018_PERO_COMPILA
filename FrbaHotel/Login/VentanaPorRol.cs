@@ -15,7 +15,8 @@ namespace FrbaHotel
 {
     public partial class VentanaPorRol : Form
     {
-        private String userId;
+       
+        public String rolSeleccionado;
 
         public VentanaPorRol()
         {
@@ -48,28 +49,10 @@ namespace FrbaHotel
         
         private void button1_Click(object sender, EventArgs e)
         {
-
-          VentanaPorHotel vhot = new VentanaPorHotel(nombreUser, this.comboBox1.Text.ToString());
+            rolSeleccionado = this.comboBox1.Text.ToString();
+            VentanaPorHotel vhot = new VentanaPorHotel(nombreUser, rolSeleccionado);
          vhot.ShowDialog();
          this.Hide();
-
-         // List<FrbaHotel.Support.Rol> roles = Database.getUserRoles(userId);
-        
-         /* foreach (FrbaHotel.Support.Rol rol in roles)
-          {
-              if (rol.estaHabilitado)
-              {
-                  VentanaPrincipal form1 = new VentanaPrincipal(rol, userId);
-                  this.Close();
-                  form1.Show();
-
-              }
-
-             // CargarComboRol();
-              button1.Hide();
-              comboBox1.Hide();
-          }
-          * */
 
         }
 

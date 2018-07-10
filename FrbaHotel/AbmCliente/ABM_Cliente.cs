@@ -15,12 +15,11 @@ namespace FrbaHotel.AbmCliente
      
     public partial class ABM_Cliente : Form
     {
-        private Seleccion_de_ABMs seleccion_de_ABMs;
-
-        public ABM_Cliente(Seleccion_de_ABMs seleccion_de_ABMs)
+       
+        public ABM_Cliente()
         {
             InitializeComponent();
-            this.seleccion_de_ABMs = seleccion_de_ABMs;
+         
         }
 
         private void button2_Click(object sender, EventArgs e)

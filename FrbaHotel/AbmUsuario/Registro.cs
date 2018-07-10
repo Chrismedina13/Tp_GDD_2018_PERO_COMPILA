@@ -17,15 +17,15 @@ namespace FrbaHotel.AbmUsuario
     
     public partial class Registro : Form
     {
-        private Seleccion_de_ABMs seleccion_de_ABMs;
+       // private Seleccion_de_ABMs seleccion_de_ABMs;
 
-        public Registro(Seleccion_de_ABMs seleccion_de_ABMs)
+        public Registro()
         {
 
             InitializeComponent();
             CargarComboRol();
             CargarListadoHoteles();
-           this.seleccion_de_ABMs = seleccion_de_ABMs;
+          // this.seleccion_de_ABMs = seleccion_de_ABMs;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -118,6 +118,7 @@ namespace FrbaHotel.AbmUsuario
                 }
             }
         }
+
 
         private bool verificarRolesCobrador(int id)
         {

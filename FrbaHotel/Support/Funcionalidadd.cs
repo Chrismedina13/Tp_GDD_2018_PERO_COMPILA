@@ -19,6 +19,7 @@ namespace FrbaHotel.Support
         public String id { get; set; }
         public Boolean activado { get; set; }
 
+     
     }
 
 
