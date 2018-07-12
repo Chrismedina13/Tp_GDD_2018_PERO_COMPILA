@@ -274,5 +274,181 @@ namespace FrbaHotel.Support
         }
 
 
+
+        internal static void AddHotel(string nombre, string mail, string Telefono, int CantidadEstrellas, string Ciudad, string Pais, DateTime FechaCreacion, string Direccion, int CalleNro, int recargaEstrella)
+        {
+            SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
+            SqlCommand addHotelCommand = new SqlCommand("insert into [GD1C2018].[pero_compila].[Hotel] (hotel_direccion, hotel_nombre, hotel_mail, hotel_telefono, hotel_cantEstrellas ,hotel_recargaEstrella,hotel_ciudad,hotel_nroCalle,hotel_pais,hotel_fechaCreacion,hotel_estado) values (@Direccion,@nombre,@mail,@Telefono,@CantidadEstrellas,@recargaEstrella,@Ciudad,@CalleNro,@Pais,@FechaCreacion,1)");
+            addHotelCommand.Parameters.AddWithValue("nombre", nombre);
+            addHotelCommand.Parameters.AddWithValue("mail", mail);
+            addHotelCommand.Parameters.AddWithValue("Telefono", Telefono);
+            addHotelCommand.Parameters.AddWithValue("CantidadEstrellas", CantidadEstrellas);
+            addHotelCommand.Parameters.AddWithValue("Ciudad", Ciudad);
+            addHotelCommand.Parameters.AddWithValue("Pais", Pais);
+            addHotelCommand.Parameters.AddWithValue("FechaCreacion", FechaCreacion);
+            addHotelCommand.Parameters.AddWithValue("Direccion", Direccion);
+            addHotelCommand.Parameters.AddWithValue("CalleNro", CalleNro);
+            addHotelCommand.Parameters.AddWithValue("recargaEstrella", recargaEstrella);
+          
+            addHotelCommand.Connection = connection;
+            connection.Open();
+            int registrosModificados = addHotelCommand.ExecuteNonQuery();
+            connection.Close();
+            if (registrosModificados > 0) MessageBox.Show("Hotel Ingresado ingresado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("Error al cargar registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        internal static void addRegimenPorHotel(int idHotel,int regimen)
+        {
+            SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
+            SqlCommand addHotelXRegimenCommand = new SqlCommand("insert into [GD1C2018].[pero_compila].[HotelXRegimen] (hotelXRegimen_hotel, hotelXRegimen_regimen) values (@idHotel,@regimen)");
+            addHotelXRegimenCommand.Parameters.AddWithValue("idHotel", idHotel);
+            addHotelXRegimenCommand.Parameters.AddWithValue("regimen", regimen);
+            addHotelXRegimenCommand.Connection = connection;
+            connection.Open();
+            int registrosModificados = addHotelXRegimenCommand.ExecuteNonQuery();
+            connection.Close();
+            if (registrosModificados > 0) MessageBox.Show("HotelXRegimen Ingresado ingresado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("Error al cargar registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+        }
+
+        internal static int obtenerIDHotel(string nombre, string mail, string Telefono, int CantidadEstrellas, string Ciudad, string Pais, DateTime FechaCreacion, string Direccion, int CalleNro, int p)
+        {
+            int idHotel = 0;
+            SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
+            SqlCommand IDHOTEL = new SqlCommand("SELECT hotel_id FROM [GD1C2018].[pero_compila].[Hotel] WHERE hotel_direccion = @Direccion and hotel_nombre = @nombre and hotel_mail = @mail and hotel_telefono = @Telefono and hotel_cantEstrellas = @CantidadEstrellas and hotel_ciudad = @Ciudad and hotel_nroCalle = @CalleNro and hotel_pais = @Pais and hotel_fechaCreacion = @FechaCreacion and hotel_estado = 1");
+            IDHOTEL.Parameters.AddWithValue("nombre", nombre);
+            IDHOTEL.Parameters.AddWithValue("mail", mail);
+            IDHOTEL.Parameters.AddWithValue("Telefono", Telefono);
+            IDHOTEL.Parameters.AddWithValue("CantidadEstrellas", CantidadEstrellas);
+            IDHOTEL.Parameters.AddWithValue("Ciudad", Ciudad);
+            IDHOTEL.Parameters.AddWithValue("Pais", Pais);
+            IDHOTEL.Parameters.AddWithValue("FechaCreacion", FechaCreacion);
+            IDHOTEL.Parameters.AddWithValue("Direccion", Direccion);
+            IDHOTEL.Parameters.AddWithValue("CalleNro", CalleNro);
+            IDHOTEL.Parameters.AddWithValue("p", p);
+
+            IDHOTEL.Connection = connection;
+            connection.Open();
+            SqlDataReader reader = IDHOTEL.ExecuteReader();
+            while (reader.Read())
+            {
+                String idString = reader["hotel_id"].ToString();
+                idHotel = Convert.ToInt32(idString);
+            }
+            connection.Close();
+            return idHotel;
+        
+        }
+
+
+        internal static void cargarGriddHotelAEliminar(DataGridView dataGridViewEliminarHotel, string nombre , string cantidadDeEstrellas, string Ciudad, string Pais)
+        {
+
+            SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018"); ;
+            connection.Open();
+            try
+            {
+                String query = "SELECT [hotel_nombre],[hotel_cantEstrellas],[hotel_ciudad],[hotel_pais] FROM [GD1C2018].[pero_compila].[Hotel] where [hotel_nombre] like '" + nombre + "%' and [hotel_ciudad] like '" + Ciudad + "%' and hotel_estado = 1 [hotel_pais] like '" + Pais + "%'";
+                SqlDataAdapter da = new SqlDataAdapter(query, connection);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridViewEliminarHotel.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo llenar el DataGridView: " + ex.ToString());
+            }
+            connection.Close();
+
+        }
+
+        internal static bool existeHotel(string nombre, string Pais, int cantidadDeEstrellas, string Ciudad)
+        {
+            String id = null;
+            SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
+            SqlCommand existeHotel = new SqlCommand("SELECT hotel_nombre FROM [GD1C2018].[pero_compila].[Cliente] WHERE hotel_nombre = @nombre and hotel_pais = @Pais and hotel_cantEstrellas = @cantidadDeEstrellas and hotel_ciudad = @Ciudad");
+            existeHotel.Parameters.AddWithValue("nombre", nombre);
+            existeHotel.Parameters.AddWithValue("Pais", Pais);
+            existeHotel.Parameters.AddWithValue("cantidadDeEstrellas", cantidadDeEstrellas);
+            existeHotel.Parameters.AddWithValue("Ciudad", Ciudad);
+
+
+            existeHotel.Connection = connection;
+            connection.Open();
+            SqlDataReader reader = existeHotel.ExecuteReader();
+            while (reader.Read())
+            {
+                id = reader["hotel_nombre"].ToString();
+            }
+            connection.Close();
+            return id != null;
+        }
+
+        internal static void eliminarHotel(string nombre, int cantidadDeEstrellas, string Pais, string Ciudad)
+        {
+
+            SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018"); ;
+            SqlCommand deleteHotel = new SqlCommand("update [GD1C2018].[pero_compila].[Hotel] set [hotel_estado] = 0 where hotel_nombre = @nombre and hotel_cantEstrellas = @cantidadDeEstrellas and hotel_pais = @Pais and hotel_ciudad = @Ciudad ");
+            deleteHotel.Parameters.AddWithValue("nombre", nombre);
+            deleteHotel.Parameters.AddWithValue("cantidadDeEstrellas", cantidadDeEstrellas);
+            deleteHotel.Parameters.AddWithValue("Pais", Pais);
+            deleteHotel.Parameters.AddWithValue("Ciudad", Ciudad);
+
+
+            deleteHotel.Connection = connection;
+            connection.Open();
+
+            int FilasAfectadas = deleteHotel.ExecuteNonQuery();
+
+            if (FilasAfectadas > 0) MessageBox.Show("El Hotel ha sido dado de baja exitosamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("El registro que quiso eliminar no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        internal static int obtenerIdHotel(string nombre, int cantidadDeEstrellas, string Pais, string Ciudad)
+        {
+            int idHotel = 0;
+            SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
+            SqlCommand IDHOTEL = new SqlCommand("SELECT hotel_id FROM [GD1C2018].[pero_compila].[Hotel] WHERE hotel_nombre = @nombre and hotel_cantEstrellas = @CantidadEstrellas and hotel_ciudad = @Ciudad and hotel_pais = @Pais and hotel_estado = 1");
+            IDHOTEL.Parameters.AddWithValue("nombre", nombre);
+            IDHOTEL.Parameters.AddWithValue("cantidadDeEstrellas", cantidadDeEstrellas);
+            IDHOTEL.Parameters.AddWithValue("Ciudad", Ciudad);
+            IDHOTEL.Parameters.AddWithValue("Pais", Pais);
+
+            IDHOTEL.Connection = connection;
+            connection.Open();
+            SqlDataReader reader = IDHOTEL.ExecuteReader();
+            while (reader.Read())
+            {
+                String idString = reader["hotel_id"].ToString();
+                idHotel = Convert.ToInt32(idString);
+            }
+            connection.Close();
+            return idHotel;
+        
+        }
+
+
+
+        internal static void agregarHotelAHotelCerrado(int idHotel, string FechaInicio, string FechaFin, string Descripcion)
+        {
+
+            SqlConnection connection = new SqlConnection(@"Data source=.\SQLSERVER2012; Initial Catalog=GD1C2018; User id=gdHotel2018; Password= gd2018");
+            SqlCommand HotelCerrado = new SqlCommand("insert into [GD1C2018].[pero_compila].[HotelCerrado] (hotelCerrado_descripcion, hotelCerrado_fechaInicio, hotelCerrado_fechaFin, hotelCerrado_hotel) values (@Descripcion,@FechaInicio,@FechaFin,@idHotel)");
+            HotelCerrado.Parameters.AddWithValue("idHotel", idHotel);
+            HotelCerrado.Parameters.AddWithValue("FechaInicio", FechaInicio);
+            HotelCerrado.Parameters.AddWithValue("FechaFin", FechaFin);
+            HotelCerrado.Parameters.AddWithValue("Descripcion", Descripcion);
+
+            HotelCerrado.Connection = connection;
+            connection.Open();
+            int registrosModificados = HotelCerrado.ExecuteNonQuery();
+            connection.Close();
+            if (registrosModificados > 0) MessageBox.Show("Hotel Cerrado ingresado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("Error al cargar registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace FrbaHotel.AbmHotel
         {
             InitializeComponent();
 
-            //Database.cargarGriddHotelAEliminar(dataGridViewEliminarHotel, "", "", "","");
+            Database.cargarGriddHotelAEliminar(dataGridViewEliminarHotel, "", "", "","");
             dataGridViewEliminarHotel.SelectionChanged += new EventHandler(dataGridViewEliminarH_SelectionChanged);
         }
 
@@ -36,24 +36,24 @@ namespace FrbaHotel.AbmHotel
 
         private void textNombre_KeyUp(object sender, KeyEventArgs e)
         {
-            //Database.cargarGriddHotelAEliminar(dataGridViewEliminarHotel,textNombre.Text,textCantidadEstrellas.Text,textCiudad.Text,texPais.Text);
+            Database.cargarGriddHotelAEliminar(dataGridViewEliminarHotel,textNombre.Text,textCantidadEstrellas.Text,textCiudad.Text,texPais.Text);
 
         }
 
         private void textCantEstrellas_KeyUp(object sender, KeyEventArgs e)
         {
-            //Database.cargarGriddHotelAEliminar(dataGridViewEliminarHotel,textNombre.Text,textCantidadEstrellas.Text,textCiudad.Text,texPais.Text);
+            Database.cargarGriddHotelAEliminar(dataGridViewEliminarHotel,textNombre.Text,textCantidadEstrellas.Text,textCiudad.Text,texPais.Text);
 
         }
 
         private void textCiudad_KeyUp(object sender, KeyEventArgs e)
         {
-            //Database.cargarGriddHotelAEliminar(dataGridViewEliminarHotel,textNombre.Text,textCantidadEstrellas.Text,textCiudad.Text,texPais.Text);
+            Database.cargarGriddHotelAEliminar(dataGridViewEliminarHotel,textNombre.Text,textCantidadEstrellas.Text,textCiudad.Text,texPais.Text);
 
         }
         private void textPais_KeyUp(object sender, KeyEventArgs e)
         {
-            //Database.cargarGriddHotelAEliminar(dataGridViewEliminarHotel,textNombre.Text,textCantidadEstrellas.Text,textCiudad.Text,texPais.Text);
+            Database.cargarGriddHotelAEliminar(dataGridViewEliminarHotel,textNombre.Text,textCantidadEstrellas.Text,textCiudad.Text,texPais.Text);
 
         }
 
@@ -79,7 +79,7 @@ namespace FrbaHotel.AbmHotel
                 return;
             }
 
-            if (false)//Database.existeHotel(nombre, Pais, cantidadDeEstrellas, Ciudad)
+            if (!(Database.existeHotel(nombre, Pais, cantidadDeEstrellas, Ciudad)))
             {
 
                 MessageBox.Show("Cliente no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -92,9 +92,9 @@ namespace FrbaHotel.AbmHotel
                 if (respuesta == DialogResult.Yes)
                 {
 
-                    // int idHotel = Database.obtenerIdHotel(nombre,cantidadDeEstrellas,Pais,Ciudad);
-                    //   Database.eliminarHotel(nombre,cantidadDeEstrellas,Pais,Ciudad); 
-                    //   Database.agregarHotelAHotelCerrado(idHotel,FechaInicio,FechaFin,Descripcion); 
+                    int idHotel = Database.obtenerIdHotel(nombre,cantidadDeEstrellas,Pais,Ciudad);
+                    Database.eliminarHotel(nombre,cantidadDeEstrellas,Pais,Ciudad); 
+                    Database.agregarHotelAHotelCerrado(idHotel,dateTimePickerFechaInicio.Text,dateTimePickerFechaFin.Text,Descripcion); 
                     this.limpiarCuadrosDeTexto();
                     Database.cargarGriddClienteAEliminar(dataGridViewEliminarHotel, "", "", "");
                 }

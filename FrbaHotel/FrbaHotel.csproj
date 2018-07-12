@@ -189,6 +189,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="BDComun1.cs" />
+    <Compile Include="GD1C2018DataSet1.Designer.cs" />
     <Compile Include="Login\VentanaPPAL.cs">
       <SubType>Form</SubType>
     </Compile>

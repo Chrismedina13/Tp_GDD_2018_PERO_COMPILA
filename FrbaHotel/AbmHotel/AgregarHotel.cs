@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FrbaHotel.Support;
 
 namespace FrbaHotel.AbmHotel
 {
@@ -103,11 +104,15 @@ namespace FrbaHotel.AbmHotel
             DateTime FechaCreacion = Convert.ToDateTime(dateFechaCreacion.Text);
             String Direccion = textDireccion.Text;
             int CalleNro = Convert.ToInt32(textNroCalle.Text);
+            Database.AddHotel(nombre, mail, Telefono, CantidadEstrellas, Ciudad, Pais, FechaCreacion, Direccion, CalleNro,10);
+            int idHotel = Database.obtenerIDHotel(nombre, mail, Telefono, CantidadEstrellas, Ciudad, Pais, FechaCreacion, Direccion, CalleNro,10);
 
             var regimenes = lbRegimen.SelectedItems.Cast<String>().ToList();
-            foreach(String regimen in regimenes ){
+            foreach(var regimen in regimenes ){
 
-                //Database.AddHotel(nombre,mail,Telefono,CantidadEstrellas,Ciudad,Pais,FechaCreacion,Direccion,CalleNro,regimen);
+                int regimenAgregar = Convert.ToInt32(regimen);
+
+                Database.addRegimenPorHotel(idHotel,regimenAgregar);
             
             }
 
